@@ -1,5 +1,5 @@
 <template>
-   <div class="px-4 sm:px-6 lg:px-8 mx-auto max-w-[85rem] mt-6">
+   <div class="px-4 sm:px-6 lg:px-8 mx-auto  mt-6">
 <div  data-hs-carousel='{
     "loadingClasses": "opacity-0",
     "dotsItemClasses": "hs-carousel-active:bg-teal-700 hs-carousel-active:border-teal-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-teal-500 dark:hs-carousel-active:border-teal-500",

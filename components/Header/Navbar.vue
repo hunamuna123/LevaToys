@@ -1,7 +1,6 @@
 <template>
-    <!-- Nav -->
 <nav class="bg-white">
-  <div class="max-w-[85rem] w-full mx-auto md:flex hidden md:flex-row sm:justify-between md:items-center md:gap-x-3 py-3 px-4 md:px-6 lg:px-8 ">
+  <div class=" w-full mx-auto md:flex hidden md:flex-row sm:justify-between md:items-center md:gap-x-3 py-3 px-4 md:px-6 lg:px-8 ">
     <div id="hs-nav-secondary" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
       <div class="py-2 sm:py-0 flex flex-col sm:flex-row sm:justify-start gap-y-2 sm:gap-y-0 sm:gap-x-6">
         <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Компания</a>
@@ -15,7 +14,7 @@
 <!-- End Nav -->
     <!-- ========== HEADER ========== -->
 <header class="flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200">
-  <nav class="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
+  <nav class="relative  w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center gap-x-1">
       <a class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80" href="#" aria-label="Brand">LevaToys</a>
 
