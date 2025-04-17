@@ -3,10 +3,10 @@
   <div class=" w-full mx-auto md:flex hidden md:flex-row sm:justify-between md:items-center md:gap-x-3 py-3 px-4 md:px-6 lg:px-8 ">
     <div id="hs-nav-secondary" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
       <div class="py-2 sm:py-0 flex flex-col sm:flex-row sm:justify-start gap-y-2 sm:gap-y-0 sm:gap-x-6">
-        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Компания</a>
-        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Доставка</a>
-        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Контакты</a>
-        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Полезные статьи</a>
+        <NuxtLink to="/company" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Компания</NuxtLink>
+        <NuxtLink to="/help/delivery" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Доставка</NuxtLink>
+        <NuxtLink to="/contacts" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Контакты</NuxtLink>
+        <NuxtLink to="/help/blog" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Полезные статьи</NuxtLink>
       </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
 <header class="flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200">
   <nav class="relative  w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center gap-x-1">
-      <a class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80" href="#" aria-label="Brand">LevaToys</a>
+      <NuxtLink  to="/" class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80"  aria-label="Brand">LevaToys</NuxtLink>
 
       <!-- Collapse Button -->
       <button type="button" class="hs-collapse-toggle md:hidden relative size-9 flex justify-center items-center font-medium text-sm rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none" id="hs-header-base-collapse"  aria-expanded="false" aria-controls="hs-header-base" aria-label="Toggle navigation"  data-hs-collapse="#hs-header-base" >
@@ -35,11 +35,11 @@
             <div class="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                 <div id="hs-nav-secondary" class="hs-collapse block md:hidden overflow-hidden transition-all duration-300 basis-full grow">
                     <div class="py-2 md:py-0 flex flex-col md:flex-row md:justify-end gap-y-2 md:gap-y-0 md:gap-x-6">
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Компания</a>
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Доставка</a>
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Контакты</a>
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Полезные статьи</a>
-                    </div>
+                      <NuxtLink to="/company" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Компания</NuxtLink>
+                      <NuxtLink to="/help/delivery" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Доставка</NuxtLink>
+                      <NuxtLink to="/contacts" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Контакты</NuxtLink>
+                      <NuxtLink to="/help/blog" class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" >Полезные статьи</NuxtLink>
+           </div>
                 </div>     
               
               <!-- Mega Menu -->
