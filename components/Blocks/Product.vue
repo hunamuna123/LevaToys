@@ -4,7 +4,7 @@
       <div class="border-b border-gray-200 mb-6">
         <nav class="flex justify-between gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
           <!-- Новый div слева -->
-          <div class="justify-start items-center flex text-2xl px-4 ">Большие игрушки (от 35см.)</div>
+          <div class="justify-start items-center flex text-md md:text-2xl px-4 ">Большие игрушки (от 35см.)</div>
           <!-- Кнопки справа -->
           <div class="flex gap-x-1 justify-end">
             <button
