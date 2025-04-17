@@ -5,7 +5,7 @@
     <BlocksInfo/>
     <BlocksCategories/>
     <BlocksProduct/>
-    
+    <BlocksNews/>
   </div>
 
 </template>
