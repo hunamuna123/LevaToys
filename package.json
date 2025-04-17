@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.11.0",
     "@tailwindcss/vite": "^4.1.4",
+    "axios": "^1.8.4",
     "nuxt": "^3.16.2",
     "preline": "^3.0.1",
     "tailwindcss": "^4.1.4",
