@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-2xl mt-40 mx-auto text-center mb-10">
+  <div class="max-w-2xl mt-20 mx-auto text-center mb-10">
     <h2 class="text-2xl font-bold md:text-4xl font-inter md:leading-tight">
-      Соберем под любые цели
+      Популярные категории
     </h2>
   </div>
 
