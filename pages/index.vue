@@ -4,8 +4,9 @@
     <Slider/>
     <BlocksInfo/>
     <BlocksCategories/>
+    <BlocksInfotwo/>
     <BlocksProduct/>
     <BlocksNews/>
+    <Footer/>
   </div>
-
 </template>
