@@ -3,6 +3,7 @@
     <HeaderNavbar/>
     <Slider/>
     <BlocksInfo/>
+    <BlocksCategories/>
   </div>
 
 </template>

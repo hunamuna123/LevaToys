@@ -14,7 +14,7 @@ definePageMeta({
 			>
 				На главную
 			</NuxtLink>
-			<h1 class="text-4xl font-bold text-gray-800 my-2 mb-3">Регистрация</h1>
+			<h1 class="text-4xl font-bold text-teal-500 my-2 mb-3">Регистрация</h1>
 			<h6 class="text-gray-500">
 				Зарегистрируйте новую учетную запись, чтобы продолжить
 			</h6>
