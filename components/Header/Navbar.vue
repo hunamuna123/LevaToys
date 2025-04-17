@@ -6,10 +6,10 @@
 
     <div id="hs-nav-secondary" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
       <div class="py-2 sm:py-0 flex flex-col sm:flex-row sm:justify-start gap-y-2 sm:gap-y-0 sm:gap-x-6">
-        <a class="font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Компания</a>
-        <a class="font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Доставка</a>
-        <a class="font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Контакты</a>
-        <a class="font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Полезные статьи</a>
+        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Компания</a>
+        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Доставка</a>
+        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Контакты</a>
+        <a class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Полезные статьи</a>
       </div>
     </div>
   </div>
@@ -38,10 +38,10 @@
             <div class="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                 <div id="hs-nav-secondary" class="hs-collapse block md:hidden overflow-hidden transition-all duration-300 basis-full grow">
                     <div class="py-2 md:py-0 flex flex-col md:flex-row md:justify-end gap-y-2 md:gap-y-0 md:gap-x-6">
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Компания</a>
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Доставка</a>
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Контакты</a>
-                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">Полезные статьи</a>
+                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Компания</a>
+                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Доставка</a>
+                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Контакты</a>
+                        <a class="px-2 font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600" href="#">Полезные статьи</a>
                     </div>
                 </div>     
               <!-- Mega Menu -->
@@ -132,7 +132,7 @@
                             <p class="text-sm text-gray-800">
                               Preline Projects has proved to be most efficient cloud based project tracking and bug tracking tool.
                             </p>
-                            <p class="mt-3 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium">
+                            <p class="mt-3 inline-flex items-center gap-x-1 text-sm text-teal-600 decoration-2 group-hover:underline group-focus:underline font-medium">
                               Learn more
                               <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                             </p>
@@ -159,7 +159,7 @@
             <a class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100" href="#">
               Sign in
             </a>
-            <a class="py-2 px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+            <a class="py-2 px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-teal-600 text-white hover:bg-teal-700 focus:outline-hidden focus:bg-teal-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
               Get started
             </a>
           </div>
