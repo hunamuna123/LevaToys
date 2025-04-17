@@ -5,9 +5,9 @@
     </h2>
   </div>
 
-  <div class="overflow-x-auto md:overflow-visible px-4 md:px-0">
+  <div class="overflow-x-auto md:overflow-visible px-4">
     <div
-      class="grid grid-flow-col auto-cols-[250px] gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:auto-cols-auto md:grid-flow-row"
+      class="grid grid-flow-col auto-cols-[350px] gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:auto-cols-auto md:grid-flow-row"
     >
       <div
         v-for="(card, index) in cards"
