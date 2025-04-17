@@ -4,6 +4,7 @@
     <Slider/>
     <BlocksInfo/>
     <BlocksCategories/>
+    <BlocksProduct/>
   </div>
 
 </template>

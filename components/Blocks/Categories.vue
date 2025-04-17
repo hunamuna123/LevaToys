@@ -1,11 +1,11 @@
 <template>
-  <div class="max-w-2xl mt-20 mx-auto text-center mb-10">
+  <div class="max-w-2xl mt-12 mx-auto text-center mb-10">
     <h2 class="text-2xl font-bold md:text-4xl font-inter md:leading-tight">
       Популярные категории
     </h2>
   </div>
 
-  <div class="overflow-x-auto md:overflow-visible px-4">
+  <div class="overflow-x-auto md:overflow-visible px-4 py-10 sm:px-4 lg:px-8">
     <div
       class="grid grid-flow-col auto-cols-[350px] gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:auto-cols-auto md:grid-flow-row"
     >
