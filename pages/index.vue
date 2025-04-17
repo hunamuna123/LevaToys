@@ -5,6 +5,7 @@
     <BlocksInfo/>
     <BlocksCategories/>
     <BlocksProduct/>
+    
   </div>
 
 </template>

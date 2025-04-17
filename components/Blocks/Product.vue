@@ -45,72 +45,95 @@
       </div>
   
       <!-- Контент табов с карточками -->
-      <div id="tabs-with-icons-1" role="tabpanel" aria-labelledby="tabs-with-icons-item-1">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="(card, index) in tab1Cards" :key="index" class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
-            <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
-              <img :src="card.image" alt="" class="h-full w-auto object-contain rounded-xl" />
+        <div id="tabs-with-icons-1" role="tabpanel" aria-labelledby="tabs-with-icons-item-1">
+        <div class="overflow-x-auto md:overflow-visible pb-4">
+            <div
+            class="grid grid-flow-col auto-cols-[270px] gap-4 md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row"
+            >
+            <div
+                v-for="(card, index) in tab1Cards"
+                :key="index"
+                class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl"
+            >
+                <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
+                <img :src="card.image" alt="" class="h-full w-auto object-contain rounded-xl" />
+                </div>
+                <div class="p-4 md:p-6 md:pt-2">
+                <span class="block mb-1 text-md font-semibold uppercase">{{ card.price }} ₽</span>
+                <h3 class="text-xl font-semibold text-gray-800">{{ card.title }}</h3>
+                <p class="mt-3 text-gray-500">{{ card.description }}</p>
+                </div>
+                <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
+                <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                    Подробнее
+                </a>
+                <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                    В корзину
+                </a>
+                </div>
             </div>
-            <div class="p-4 md:p-6 md:pt-2">
-              <span class="block mb-1 text-md font-semibold uppercase">{{ card.price }} ₽</span>
-              <h3 class="text-xl font-semibold text-gray-800">{{ card.title }}</h3>
-              <p class="mt-3 text-gray-500">{{ card.description }}</p>
             </div>
-            <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
-              <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
-                Подробнее
-              </a>
-              <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
-                В корзину
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-  
+        </div>
       <div id="tabs-with-icons-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-2">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="(card, index) in tab2Cards" :key="index" class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
-            <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
-              <img :src="card.image" alt="" class="h-full w-auto object-contain rounded-xl" />
+        <div class="overflow-x-auto md:overflow-visible pb-4">
+            <div
+            class="grid grid-flow-col auto-cols-[270px] gap-4 md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row"
+            >
+            <div
+                v-for="(card, index) in tab2Cards"
+                :key="index"
+                class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl"
+            >
+                <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
+                <img :src="card.image" alt="" class="h-full w-auto object-contain rounded-xl" />
+                </div>
+                <div class="p-4 md:p-6 md:pt-2">
+                <span class="block mb-1 text-md font-semibold uppercase">{{ card.price }} ₽</span>
+                <h3 class="text-xl font-semibold text-gray-800">{{ card.title }}</h3>
+                <p class="mt-3 text-gray-500">{{ card.description }}</p>
+                </div>
+                <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
+                <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                    Подробнее
+                </a>
+                <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                    В корзину
+                </a>
+                </div>
             </div>
-            <div class="p-4 md:p-6 md:pt-2">
-              <span class="block mb-1 text-md font-semibold uppercase">{{ card.price }} ₽</span>
-              <h3 class="text-xl font-semibold text-gray-800">{{ card.title }}</h3>
-              <p class="mt-3 text-gray-500">{{ card.description }}</p>
             </div>
-            <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
-              <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
-                Подробнее
-              </a>
-              <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
-                В корзину
-              </a>
-            </div>
-          </div>
         </div>
       </div>
   
       <div id="tabs-with-icons-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-3">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="(card, index) in tab3Cards" :key="index" class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
-            <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
-              <img :src="card.image" alt="" class="h-full w-auto object-contain rounded-xl" />
+        <div class="overflow-x-auto md:overflow-visible pb-4">
+            <div
+            class="grid grid-flow-col auto-cols-[270px] gap-4 md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row"
+            >
+            <div
+                v-for="(card, index) in tab3Cards"
+                :key="index"
+                class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl"
+            >
+                <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
+                <img :src="card.image" alt="" class="h-full w-auto object-contain rounded-xl" />
+                </div>
+                <div class="p-4 md:p-6 md:pt-2">
+                <span class="block mb-1 text-md font-semibold uppercase">{{ card.price }} ₽</span>
+                <h3 class="text-xl font-semibold text-gray-800">{{ card.title }}</h3>
+                <p class="mt-3 text-gray-500">{{ card.description }}</p>
+                </div>
+                <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
+                <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                    Подробнее
+                </a>
+                <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                    В корзину
+                </a>
+                </div>
             </div>
-            <div class="p-4 md:p-6 md:pt-2">
-              <span class="block mb-1 text-md font-semibold uppercase">{{ card.price }} ₽</span>
-              <h3 class="text-xl font-semibold text-gray-800">{{ card.title }}</h3>
-              <p class="mt-3 text-gray-500">{{ card.description }}</p>
             </div>
-            <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
-              <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
-                Подробнее
-              </a>
-              <a href="#" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
-                В корзину
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
