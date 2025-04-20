@@ -1,6 +1,6 @@
 <template>
     <section class="bg-white py-10 px-4 md:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class=" mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="flex items-start gap-4">
           <img src="/image.png" alt="Доставка" class="w-16 h-16 flex-shrink-0" />
           <div>
