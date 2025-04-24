@@ -52,6 +52,7 @@ import { useCookie } from "#app";
 import { api as useApiStore } from "@/store/api";
 
 export default {
+  middleware: 'auth',
   data() {
     return {
       phone: "",
@@ -63,7 +64,7 @@ export default {
     };
   },
   mounted() {
-    const phoneInput = document.getElementById("phone-input");
+    let phoneInput = document.getElementById("phone-input");
     if (phoneInput) {
       IMask(phoneInput, {
         mask: "+{7} (000) 000-00-00",
@@ -71,7 +72,7 @@ export default {
     }
   },
   setup() {
-    const api = useApiStore();
+    let api = useApiStore();
     return { api };
   },
   methods: {
@@ -79,10 +80,10 @@ export default {
       if (el) this.pinRefs[`pin${index}`] = el;
     },
     onPinInput(event, index) {
-      const val = event.target.value.replace(/\D/g, "");
+      let val = event.target.value.replace(/\D/g, "");
       if (!val) return;
       this.pinDigits[index] = val[0];
-      const next = index + 1;
+      let next = index + 1;
       if (next < 4) this.pinRefs[`pin${next}`]?.focus();
       if (this.pinDigits.every((d) => d.length === 1)) this.submitPinCode();
     },
@@ -93,19 +94,19 @@ export default {
       }
     },
     async submitPinCode() {
-      const code = this.pinDigits.join("");
-      const cleaned = this.phone.replace(/\D/g, "");
+      let code = this.pinDigits.join("");
+      let cleaned = this.phone.replace(/\D/g, "");
 
       try {
-        const res = await axios.post(`${this.api.url}api/v1/sign/tel-code/`, {
+        let res = await axios.post(`${this.api.url}api/v1/sign/tel-code/`, {
           tel: cleaned,
           code,
         });
 
-        const accessToken = useCookie("access_token", {
+        let accessToken = useCookie("access_token", {
           maxAge: 60 * 60 * 24 * 7,
         });
-        const refreshToken = useCookie("refresh_token", {
+        let refreshToken = useCookie("refresh_token", {
           maxAge: 60 * 60 * 24 * 7,
         });
 
@@ -122,14 +123,14 @@ export default {
     },
     async sendData() {
       if (this.showPin) return;
-      const cleaned = this.phone.replace(/\D/g, "");
+      let cleaned = this.phone.replace(/\D/g, "");
       if (cleaned.length !== 11) {
         this.error = "Введите корректный номер телефона";
         this.errorBoolen = true;
         return;
       }
       try {
-        const response = await axios.post(
+        let response = await axios.post(
           `${this.api.url}api/v1/verification-codes/tel/`,
           {
             tel: cleaned,

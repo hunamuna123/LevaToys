@@ -1,0 +1,38 @@
+import { api } from "@/store/api.js";
+
+export default defineNuxtRouteMiddleware(async (to) => {
+  const apiStore = api();
+  const accessToken = useCookie('access_token');
+  const refreshToken = useCookie('refresh_token');
+
+  // Если есть оба токена - ничего не делаем
+  if (accessToken.value && refreshToken.value) {
+    return;
+  }
+
+  // Если нет access token, но есть refresh token - обновляем
+  if (!accessToken.value && refreshToken.value) {
+    try {
+      const response = await fetch(`${apiStore.url}api/v1/refresh/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          token_refresh: refreshToken.value
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.data) {
+          // Обновляем токены в куках
+          accessToken.value = data.data.access_token;
+          refreshToken.value = data.data.refresh_token;
+        }
+      }
+    } catch (error) {
+      console.error('Ошибка при обновлении токена:', error);
+    }
+  }
+}); 

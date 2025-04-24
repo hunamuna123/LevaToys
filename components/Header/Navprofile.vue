@@ -30,7 +30,7 @@
         </NuxtLink>
         <NuxtLink
           class="p-2 flex gap-x-3 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg transition-colors duration-200 text-sm truncate font-medium"
-          to="/order">
+          to="/">
           <div class="w-full flex flex-col items-start justify-center">
             Корзина
           </div>

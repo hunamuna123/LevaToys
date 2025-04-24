@@ -9,8 +9,8 @@
     <div
       class="grid grid-flow-col auto-cols-[350px] gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:auto-cols-auto md:grid-flow-row">
       <div v-for="(card, index) in cards" :key="index"
-        class="card bg-teal-400 shadow-2xl border-teal-300 border rounded-xl relative flex flex-col">
-        <img :src="card.image" :alt="card.title" class="w-full h-full rounded-xl object-cover" />
+        class="card bg-teal-400 shadow-2xl  p-6 border-teal-300 border rounded-xl relative flex flex-col">
+        <NuxtImg :src="card.image" :alt="card.title" class="w-full h-full  rounded-xl object-cover" format="webp" />
         <div class="absolute top-2 left-4 text-white text-xl font-bold backdrop-blur-xl">
           {{ card.title }}
         </div>
@@ -30,14 +30,13 @@
 </template>
 
 <script setup>
-const cards = [
-  {
-    title: 'Мелкие игрушки', image: '/toy2.png', link: '/catalog?category=1'},
-  { title: 'Средние игрушки (от 16 см)', image: '/toy3.png', link: '/catalog?category=2' },
-  { title: 'Большие игрушки (от 35 см.)', image: '/toy4.png', link: '/catalog?category=3' },
-  { title: 'Новинки', image: '/toy5.png', link: '/catalog?category=4' },
-  { title: 'Аксессуары', image: '/toy6.png', link: '/catalog?category=5' },
-  { title: 'Прочие игрушки', image: '/toy7.png', link: '/catalog?category=6' }
+let cards = [
+  { title: 'Мелкие игрушки', image: '/toy2.png', link: '/catalog?category_id=1' },
+  { title: 'Средние игрушки (от 16 см)', image: '/toy3.png', link: '/catalog?category_id=2' },
+  { title: 'Большие игрушки (от 35 см.)', image: '/toy4.png', link: '/catalog?category_id=3' },
+  { title: 'Новинки', image: '/toy5.png', link: '/catalog?category_id=4' },
+  { title: 'Аксессуары', image: '/toy6.png', link: '/catalog?category_id=5' },
+  { title: 'Прочие игрушки', image: '/toy7.png', link: '/catalog?category_id=6' }
 ]
 </script>
 

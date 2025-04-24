@@ -143,21 +143,21 @@
   import { ref } from 'vue'
   
   // Данные для карточек
-  const tab1Cards = ref([
+  let tab1Cards = ref([
     { image: '/toy.png', price: 549, title: 'Окула Долбаеп, 40 см', description: 'Арт. 66600605 Кол-во в упак. 24' },
     { image: '/toy.png', price: 349, title: 'Медведь Плюшевый', description: 'Арт. 23456789 Кол-во в упак. 12' },
     { image: '/toy.png', price: 799, title: 'Робот Пылесос', description: 'Арт. 78945612 Кол-во в упак. 10' },
     { image: '/toy.png', price: 999, title: 'Робот-собака', description: 'Арт. 10293847 Кол-во в упак. 15' },
   ])
   
-  const tab2Cards = ref([
+  let tab2Cards = ref([
     { image: '/toy.png', price: 499, title: 'Плюшевый Медведь', description: 'Арт. 55522233 Кол-во в упак. 20' },
     { image: '/toy.png', price: 349, title: 'Динозавр', description: 'Арт. 98989898 Кол-во в упак. 10' },
     { image: '/toy.png', price: 799, title: 'Жираф 3D', description: 'Арт. 45612389 Кол-во в упак. 5' },
     { image: '/toy.png', price: 1299, title: 'Кубик-Рубик', description: 'Арт. 56748392 Кол-во в упак. 12' },
   ])
   
-  const tab3Cards = ref([
+  let tab3Cards = ref([
     { image: '/toy.png', price: 649, title: 'Летающий диск', description: 'Арт. 65478912 Кол-во в упак. 8' },
     { image: '/toy.png', price: 499, title: 'Гигантский мяч', description: 'Арт. 34221354 Кол-во в упак. 6' },
     { image: '/toy.png', price: 799, title: 'Игрушечный вертолет', description: 'Арт. 91028374 Кол-во в упак. 7' },

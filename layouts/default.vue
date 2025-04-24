@@ -11,37 +11,22 @@
             <div class="flex py-8">
               <div>
                 <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-                  <button
-                    type="button"
+                  <button type="button"
                     class="hs-tab-active:bg-teal-100 hs-tab-active:text-teal-600 text-left px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-                    id="vertical-tab-with-border-item-1"
-                    aria-selected="true"
-                    data-hs-tab="#vertical-tab-with-border-1"
-                    aria-controls="vertical-tab-with-border-1"
-                    role="tab"
-                  >
+                    id="vertical-tab-with-border-item-1" aria-selected="true" data-hs-tab="#vertical-tab-with-border-1"
+                    aria-controls="vertical-tab-with-border-1" role="tab">
                     О компании
                   </button>
-                  <button
-                    type="button"
+                  <button type="button"
                     class="hs-tab-active:bg-teal-100 text-left hs-tab-active:text-teal-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-                    id="vertical-tab-with-border-item-2"
-                    aria-selected="false"
-                    data-hs-tab="#vertical-tab-with-border-2"
-                    aria-controls="vertical-tab-with-border-2"
-                    role="tab"
-                  >
+                    id="vertical-tab-with-border-item-2" aria-selected="false" data-hs-tab="#vertical-tab-with-border-2"
+                    aria-controls="vertical-tab-with-border-2" role="tab">
                     Tab 2
                   </button>
-                  <button
-                    type="button"
+                  <button type="button"
                     class="hs-tab-active:bg-teal-100 text-left hs-tab-active:text-teal-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-                    id="vertical-tab-with-border-item-3"
-                    aria-selected="false"
-                    data-hs-tab="#vertical-tab-with-border-3"
-                    aria-controls="vertical-tab-with-border-3"
-                    role="tab"
-                  >
+                    id="vertical-tab-with-border-item-3" aria-selected="false" data-hs-tab="#vertical-tab-with-border-3"
+                    aria-controls="vertical-tab-with-border-3" role="tab">
                     Tab 3
                   </button>
                 </nav>
@@ -60,7 +45,7 @@
 </template>
 
 <script setup>
-const route = useRoute()
+let route = useRoute()
 
-const pageTitle = computed(() => route.meta.title || '')
+let pageTitle = computed(() => route.meta.title || '')
 </script>

@@ -10,5 +10,13 @@ export default defineNuxtConfig({
   },
   modules: [
     '@pinia/nuxt',
+    '@nuxt/image'
   ],
+  image: {
+    // Здесь можно указать провайдер, например static, ipx, cloudinary и т.п.
+    provider: 'ipx',
+    ipx: {
+      dir: 'public', // если используешь /public
+    }
+  }
 });

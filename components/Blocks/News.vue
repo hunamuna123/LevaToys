@@ -36,7 +36,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const tab1Cards = ref([
+let tab1Cards = ref([
   {
     image: '/toy.png',
     price: 549,

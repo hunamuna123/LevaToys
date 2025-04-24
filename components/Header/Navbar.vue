@@ -279,5 +279,5 @@
   </header>
 </template>
 <script setup>
-const accessToken = useCookie("access_token").value;
+let accessToken = useCookie("access_token").value;
 </script>

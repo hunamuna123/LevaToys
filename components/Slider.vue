@@ -76,7 +76,7 @@ export default {
         async getNews() {
             this.isLoading = true
             try {
-                const response = await axios.get(`${this.url}api/v1/main/banner/`, {
+                let response = await axios.get(`${this.url}api/v1/main/banner/`, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -87,7 +87,7 @@ export default {
 			} finally {
 				this.isLoading = false
                 this.$nextTick(() => {
-					const carouselElement = document.getElementById('carousel')
+					let carouselElement = document.getElementById('carousel')
 
 					window.HSStaticMethods.autoInit()
 

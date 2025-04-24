@@ -1,0 +1,44 @@
+<template>
+  <div
+    class="w-full flex flex-col gap-5 bg-white border border-gray-200 shadow-sm rounded-[20px] p-4 md:p-5 relative transition-transform duration-200 overflow-hidden">
+    <div class="w-full grid grid-cols-2 gap-4">      <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden">
+        <img v-if="product.images && product.images.length" class="w-full h-full object-cover"
+          :src="product.images[0].image" :alt="product.name" />
+      </div>
+      <div class="flex flex-col gap-1 h-full">
+        <p class="text-gray-500">
+          {{ product.category?.name }}
+        </p>
+        <h4 class="text-xl line-clamp-2">
+          {{ product.name }}
+        </h4>
+        <p class="mt-0.5 line-clamp-3">
+          {{ product.description }}
+        </p>
+        <h3 class="text-2xl font-bold mt-auto">
+          {{ product.price }} ₽
+        </h3>
+      </div>
+    </div>
+
+    <NuxtLink :to="'/product/' + product.id">
+      <button type="button"
+        class="mt-auto w-full py-2.5 px-6 justify-center items-center font-medium text-sm rounded-xl bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700 transition-colors duration-200 cursor-pointer">
+        Подробнее
+      </button>
+    </NuxtLink>
+  </div>
+</template>
+
+<script setup>
+import { defineProps } from 'vue'
+
+defineProps({
+  product: {
+    type: Object,
+    required: true,
+  },
+})
+
+
+</script>

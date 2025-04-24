@@ -99,7 +99,7 @@ export default {
         this.fetchProfile()
     },
     setup() {
-        const api = useApiStore();
+        let api = useApiStore();
         return { api };
     },
     methods: {
