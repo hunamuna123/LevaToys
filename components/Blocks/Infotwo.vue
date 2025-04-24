@@ -15,8 +15,7 @@
         <button class="bg-teal-500 rounded-xl hover:bg-teal-600 text-white font-bold py-2 px-4 rounded w-fit">
           Подробнее
         </button>
-      </div>
-  
+      </div>  
       <!-- Иллюстрация -->
       <div class="lg:w-1/2 mt-6 lg:mt-0 hidden lg:flex justify-end ">
         <img

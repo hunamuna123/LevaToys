@@ -1,17 +1,8 @@
 <template>
-	<div class="w-full flex items-center justify-between my-4">
+	<div class="w-full flex items-center justify-between my-2">
 		<h3 class="text-xl font-semibold">Результаты</h3>
 		<div class="flex flex-row gap-3">
-			<button
-				type="button"
-				aria-haspopup="dialog"
-				aria-expanded="false"
-				aria-controls="hs-scale-animation-modal-filter"
-				data-hs-overlay="#hs-scale-animation-modal-filter"
-				class="lg:hidden py-2.5 px-6 flex justify-center items-center gap-2 font-medium text-sm rounded-full border border-gray-200 bg-white text-black hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200"
-			>
-				Фильтры
-			</button>
+			<CatalogModalF/>
 			<div
 				class="hs-dropdown relative [--gpu-acceleration:false] inline-flex"
 				id="dropdown"
@@ -167,12 +158,12 @@
 </template>
 
 <script setup>
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
-const activeSort = ref('data_desc') // Сортировка по умолчанию
+const activeSort = ref('data_desc')
 
 const props = defineProps({
 	onSort: {
@@ -184,11 +175,9 @@ const props = defineProps({
 const handleSort = (sortOption) => {
 	activeSort.value = sortOption
 	
-	// Обновляем параметр сортировки в URL
 	const query = { ...route.query, sort: sortOption }
 	router.push({ query })
 	
-	// Вызываем функцию сортировки родительского компонента
 	props.onSort(sortOption)
 }
 
@@ -197,9 +186,14 @@ onMounted(() => {
     window.HSStaticMethods.autoInit()
   }
   
-  // Инициализируем сортировку из URL, если она есть
   if (route.query.sort) {
     activeSort.value = route.query.sort
+  }
+})
+
+watch(() => route.query.sort, (newSort) => {
+  if (newSort) {
+    activeSort.value = newSort
   }
 })
 </script>

@@ -8,8 +8,8 @@
 
 			<div class="w-full h-full flex flex-col">
 				<div class="flex-none">
-					<CatalogSkeletonSorting v-if="isProductsLoading" />
-					<CatalogSorting v-else :onSort="updateSort" />
+					<CatalogSkeletonSorting v-show="isProductsLoading" />
+					<CatalogSorting v-show="!isProductsLoading" :onSort="updateSort" />
 				</div>
 				<div
 					class="flex-1 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent">
@@ -128,4 +128,44 @@ onMounted(() => {
 		fetchProducts();
 	}
 });
+
+const handleFiltersLoading = (loading) => {
+	isLoadingFilters.value = loading
+}
+
+const handleProductsUpdate = (products) => {
+	products.value = products
+}
+
+const updateQueryParams = (newParams) => {
+	const query = { ...route.query }
+	
+	Object.keys(newParams).forEach(key => {
+		if (newParams[key]) {
+			query[key] = newParams[key]
+		} else {
+			delete query[key]
+		}
+	})
+	
+	if (!query.page) {
+		query.page = '1'
+	}
+	
+	router.push({ query })
+}
+
+onMounted(() => {
+	if (route.query.page) {
+		currentPage.value = parseInt(route.query.page)
+	}
+})
+
+watch(() => route.query, (newQuery) => {
+	if (newQuery.page) {
+		currentPage.value = parseInt(newQuery.page)
+	} else {
+		currentPage.value = 1
+	}
+}, { immediate: true })
 </script>

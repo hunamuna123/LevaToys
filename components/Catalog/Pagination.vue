@@ -154,4 +154,30 @@ const handleInputChange = (event) => {
 	}
 	event.target.value = '';
 };
+
+const getPageNumbers = () => {
+	const pages = []
+	
+	if (props.totalPages <= 8) {
+		for (let i = 1; i <= props.totalPages; i++) {
+			pages.push(i)
+		}
+	} else {
+		if (props.currentPage <= 4) {
+			for (let i = 1; i <= 4; i++) {
+				pages.push(i)
+			}
+		} else if (props.currentPage >= props.totalPages - 3) {
+			for (let i = props.totalPages - 3; i <= props.totalPages; i++) {
+				pages.push(i)
+			}
+		} else {
+			pages.push(props.currentPage - 1)
+			pages.push(props.currentPage)
+			pages.push(props.currentPage + 1)
+		}
+	}
+	
+	return pages
+}
 </script>
