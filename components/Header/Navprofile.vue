@@ -50,6 +50,8 @@ export default {
   methods: {
     leaveAccount() {
       let accessToken = useCookie('access_token')
+      let refreshToken = useCookie('refresh_token')
+      refreshToken.value = null
       accessToken.value = null
       window.location.href = '/'
     }
