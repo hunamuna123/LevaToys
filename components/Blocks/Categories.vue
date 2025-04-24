@@ -10,7 +10,7 @@
       class="grid grid-flow-col auto-cols-[350px] gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:auto-cols-auto md:grid-flow-row">
       <div v-for="(card, index) in cards" :key="index"
         class="card bg-teal-400 shadow-2xl  p-6 border-teal-300 border rounded-xl relative flex flex-col">
-        <NuxtImg :src="card.image" :alt="card.title" class="w-full h-full  rounded-xl object-cover" format="webp" />
+        <img :src="card.image" :alt="card.title" class="w-full h-full  rounded-xl object-cover" />
         <div class="absolute top-2 left-4 text-white text-xl font-bold backdrop-blur-xl">
           {{ card.title }}
         </div>
