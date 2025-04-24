@@ -92,7 +92,7 @@ export default {
                 inn: '',
                 name_company: ''
             },
-            loading: true, // Флаг загрузки
+            loading: true, 
         }
     },
     mounted() {
@@ -115,7 +115,7 @@ export default {
             } catch (error) {
                 console.error('Error fetching profile data:', error)
             } finally {
-                this.loading = false; // Когда данные загружены, флаг меняется
+                this.loading = false; 
             }
         },
 
