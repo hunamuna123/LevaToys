@@ -38,14 +38,27 @@ import { onMounted, onUnmounted } from 'vue'
 const closeModal = () => {
 	const modal = document.getElementById('hs-scale-animation-modal-filter')
 	const backdrop = document.getElementById('hs-scale-animation-modal-filter-backdrop')
-
+	
 	if (modal) {
 		modal.classList.remove('hs-overlay-open')
 		modal.classList.add('hidden')
 	}
-
+	
 	if (backdrop) {
 		backdrop.remove()
+	}
+
+	// Enable body scroll
+	document.body.style.overflow = ''
+}
+
+const openModal = () => {
+	const modal = document.getElementById('hs-scale-animation-modal-filter')
+	if (modal) {
+		modal.classList.remove('hidden')
+		modal.classList.add('hs-overlay-open')
+		// Disable body scroll
+		document.body.style.overflow = 'hidden'
 	}
 }
 
@@ -61,6 +74,12 @@ onMounted(() => {
 				closeModal()
 			}
 		})
+
+		// Add event listener for opening modal
+		const openButton = document.querySelector('[data-hs-overlay="#hs-scale-animation-modal-filter"]')
+		if (openButton) {
+			openButton.addEventListener('click', openModal)
+		}
 	}
 })
 
