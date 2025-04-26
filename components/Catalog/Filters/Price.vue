@@ -10,6 +10,7 @@
 					v-model="priceFrom"
 					type="number"
 					class="peer py-3 px-4 ps-11 block w-full bg-gray-100 border-transparent rounded-xl text-sm focus:outline-none disabled:opacity-50 disabled:pointer-events-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+					@input="debounceUpdateQuery"
 				/>
 				<div
 					class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none text-gray-400"
@@ -23,6 +24,7 @@
 					v-model="priceTo"
 					type="number"
 					class="peer py-3 px-4 ps-11 block w-full bg-gray-100 border-transparent rounded-xl text-sm focus:outline-none disabled:opacity-50 disabled:pointer-events-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+					@input="debounceUpdateQuery"
 				/>
 				<div
 					class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none text-gray-400"
@@ -35,31 +37,48 @@
 </template>
 
 <script>
+import { ref, watch, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
 export default {
-  data() {
-    return {
-      priceFrom: null,
-      priceTo: null,
+  setup() {
+    const route = useRoute();
+    const router = useRouter();
+    const priceFrom = ref(route.query.price_from || null);
+    const priceTo = ref(route.query.price_to || null);
+    let debounceTimer = null;
+
+    const debounceUpdateQuery = () => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        updateQuery();
+      }, 1000); 
     };
-  },
-  watch: {
-    priceFrom() {
-      this.updateQuery();
-    },
-    priceTo() {
-      this.updateQuery();
-    },
-  },
-  methods: {
-    updateQuery() {
-      this.$router.push({
+
+    const updateQuery = () => {
+      router.push({
         query: {
-          ...this.$route.query,
-          price_from: this.priceFrom || undefined,
-          price_to: this.priceTo || undefined,
+          ...route.query,
+          price_from: priceFrom.value || undefined,
+          price_to: priceTo.value || undefined,
         },
       });
-    },
+    };
+
+    watch(
+      () => route.query,
+      (newQuery) => {
+        priceFrom.value = newQuery.price_from || null;
+        priceTo.value = newQuery.price_to || null;
+      },
+      { deep: true }
+    );
+
+    return {
+      priceFrom,
+      priceTo,
+      debounceUpdateQuery,
+    };
   },
 };
 </script>
