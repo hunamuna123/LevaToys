@@ -1,9 +1,8 @@
 <!-- layouts/default.vue -->
 <template>
-  <div class="max-w-[90rem] mx-auto">
+  <div class="max-w-[90rem] min-h-screen mx-auto">
     <HeaderNavbar />
-
-    <main class="w-full px-4 sm:px-6 lg:px-8 mx-auto mt-[68px] lg:mt-[72px] min-h-[60vh] mb-20">
+    <main class="w-full mt-4 px-4 sm:px-6 lg:px-8 mx-auto mt-2 min-h-[60vh] mb-20">
       <div class="grid md:grid-cols-6">
         <div class="md:col-span-1">
           <div class="">

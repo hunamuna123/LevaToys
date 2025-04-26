@@ -16,10 +16,7 @@
     <div
       class="hs-dropdown-menu hs-dropdown-open:scale-100 border border-gray-100 hs-dropdown-open:opacity-100 scale-95 opacity-0 z-10 ease-in-out transition-[transform,opacity] duration-200 min-w-60 bg-white shadow-lg rounded-lg hidden"
       role="menu" aria-orientation="vertical" aria-labelledby="hs-header-profile-dropdown">
-      <div class="py-3 px-5 bg-gray-100 rounded-t-lg">
-        <p class="text-sm text-gray-500">Вы вошли как</p>
-        <p class="text-sm font-medium text-gray-800">+7 (988) 311-76-13</p>
-      </div>
+
       <div class="p-1.5 space-y-0.5">
         <NuxtLink
           class="p-2 flex gap-x-3 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg transition-colors duration-200 text-sm truncate font-medium"
@@ -30,7 +27,7 @@
         </NuxtLink>
         <NuxtLink
           class="p-2 flex gap-x-3 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg transition-colors duration-200 text-sm truncate font-medium"
-          to="/">
+          to="/basket">
           <div class="w-full flex flex-col items-start justify-center">
             Корзина
           </div>

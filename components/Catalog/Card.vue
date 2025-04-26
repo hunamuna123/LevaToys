@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <NuxtLink :to="'/product/' + product.id">
+    <NuxtLink :to="'/catalog/' + product.id">
       <button type="button"
         class="mt-auto w-full py-2.5 px-6 justify-center items-center font-medium text-sm rounded-xl bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700 transition-colors duration-200 cursor-pointer">
         Подробнее

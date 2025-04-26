@@ -1,6 +1,6 @@
 <template>
 	<nav
-		class="flex items-center gap-x-1 justify-between mt-auto"
+		class="flex items-center gap-x-1 justify-between"
 		aria-label="Pagination"
 	>
 		<button
