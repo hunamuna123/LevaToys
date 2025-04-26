@@ -1,7 +1,8 @@
 <template>
   <div
     class="w-full flex flex-col gap-5 bg-white border border-gray-200 shadow-sm rounded-[20px] p-4 md:p-5 relative transition-transform duration-200 overflow-hidden">
-    <div class="w-full grid grid-cols-2 gap-4">      <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden">
+    <div class="w-full grid grid-cols-2 gap-4">    
+      <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden">
         <img v-if="product.images && product.images.length" class="w-full h-full object-cover"
           :src="product.images[0].image" :alt="product.name" />
       </div>

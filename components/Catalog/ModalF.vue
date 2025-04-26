@@ -1,12 +1,12 @@
 <template>
 	<button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-scale-animation-modal-filter"
 		data-hs-overlay="#hs-scale-animation-modal-filter"
-		class="lg:hidden py-2.5 px-4 md:px-6 flex justify-center items-center gap-2 font-medium text-sm rounded-full border border-gray-200 bg-white text-black hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200">
+		class="lg:hidden py-2.5 px-6 flex justify-center items-center gap-2 font-medium text-sm rounded-full border border-gray-200 bg-white text-black hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200">
 		Фильтры
 	</button>
 	<div id="hs-scale-animation-modal-filter"
-		class="hs-overlay hs-overlay-backdrop-open:backdrop-blur hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto"
-		role="dialog" tabindex="-1" aria-labelledby="hs-scale-animation-modal-filter-label">
+		class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto" role="dialog"
+		tabindex="-1" aria-labelledby="hs-scale-animation-modal-filter-label">
 		<div
 			class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
 			<div class="w-full flex flex-col border rounded-xl bg-white border-gray-200">
@@ -25,7 +25,7 @@
 					</button>
 				</div>
 				<div class="overflow-y-auto">
-					<CatalogFilters />
+					<CatalogFilters @close-modal="closeModal" />
 				</div>
 			</div>
 		</div>
@@ -35,6 +35,20 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 
+const closeModal = () => {
+	const modal = document.getElementById('hs-scale-animation-modal-filter')
+	const backdrop = document.getElementById('hs-scale-animation-modal-filter-backdrop')
+
+	if (modal) {
+		modal.classList.remove('hs-overlay-open')
+		modal.classList.add('hidden')
+	}
+
+	if (backdrop) {
+		backdrop.remove()
+	}
+}
+
 onMounted(() => {
 	if (window.HSStaticMethods) {
 		window.HSStaticMethods.autoInit()
@@ -43,17 +57,15 @@ onMounted(() => {
 	const modal = document.getElementById('hs-scale-animation-modal-filter')
 	if (modal) {
 		modal.addEventListener('click', (e) => {
-			e.stopPropagation()
+			if (e.target === modal) {
+				closeModal()
+			}
 		})
 	}
 })
 
 onUnmounted(() => {
-	const modal = document.getElementById('hs-scale-animation-modal-filter')
-	if (modal) {
-		modal.classList.remove('hs-overlay-open')
-		modal.classList.add('hidden')
-	}
+	closeModal()
 })
 </script>
 
