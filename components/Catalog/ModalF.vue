@@ -1,7 +1,7 @@
 <template>
 	<button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-scale-animation-modal-filter"
 		data-hs-overlay="#hs-scale-animation-modal-filter"
-		class="lg:hidden py-2.5 px-6 flex justify-center items-center gap-2 font-medium text-sm rounded-full border border-gray-200 bg-white text-black hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200">
+		class="lg:hidden py-2.5 px-3 md:px-6 flex justify-center items-center gap-2 font-medium text-sm rounded-full border border-gray-200 bg-white text-black hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200">
 		Фильтры
 	</button>
 	<div id="hs-scale-animation-modal-filter"

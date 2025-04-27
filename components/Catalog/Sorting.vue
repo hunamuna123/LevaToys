@@ -5,7 +5,7 @@
 			<CatalogModalF />
 			<div class="hs-dropdown relative [--gpu-acceleration:false] inline-flex" id="dropdown">
 				<button id="hs-dropdown-scale-animation" type="button"
-					class="hs-dropdown-toggle py-2.5 px-4 md:px-6 flex justify-center items-center gap-2 font-medium text-sm rounded-full border border-gray-200 bg-white text-black hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200"
+					class="hs-dropdown-toggle py-2.5 px-3 md:px-6 flex justify-center items-center gap-2 font-medium text-sm rounded-full border border-gray-200 bg-white text-black hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200"
 					aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
 					Сортировать
 					<svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

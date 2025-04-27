@@ -11,16 +11,16 @@
         <a v-for="(card, index) in tab1Cards" :key="index"
           class="group hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-xl  transition" href="#">
 
-          <div class="w-full h-30 md:h-40 overflow-hidden rounded-xl ">
-            <img class="w-full h-full object-cover" :src="card.image" :alt="card.title" />
+          <div class=" p-2  w-full h-30 md:h-40 overflow-hidden  ">
+            <img  class="w-full h-full rounded-xl object-cover" :src="card.image" :alt="card.title" />
           </div>
-          <h3 class="mt-5 text-xl text-gray-800">
+          <h3 class=" text-xl p-2  text-gray-800">
             {{ card.title }}
           </h3>
-          <p class="mt-2 text-sm text-gray-600">
+          <p class=" text-sm p-2  text-gray-600">
             {{ card.description }}
           </p>
-          <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
+          <p class="mt-3 inline-flex items-center gap-x-1 p-2 text-sm font-semibold text-gray-800">
             Читать подробнее
             <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
               xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -28,7 +28,6 @@
               <path d="m9 18 6-6-6-6" />
             </svg>
           </p>
-
         </a>
       </div>
     </div>

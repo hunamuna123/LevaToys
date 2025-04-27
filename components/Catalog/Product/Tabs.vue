@@ -81,8 +81,8 @@
 
     <div id="tabs-with-icons-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-2">
         <p class="text-gray-600">
-				{{ product?.description || 'Отсутствует' }}
-			</p>
+            {{ product?.description || 'Отсутствует' }}
+        </p>
     </div>
 
     <div id="tabs-with-icons-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-3">
@@ -98,7 +98,8 @@
 
     <div id="tabs-with-icons-4" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-4">
         <div class="flex flex-col gap-2 text-md">
-            <p class="my-5">Вам не нужно заниматься поиском поставщиков в своём регионе, мы отправим Вам мягкую игрушку в любой
+            <p class="my-5">Вам не нужно заниматься поиском поставщиков в своём регионе, мы отправим Вам мягкую игрушку
+                в любой
                 уголок страны и даже в страны таможенного союза. Наша компания сотрудничает только с проверенными
                 транспортными компаниями: ПЭК, Деловые Линии, Байкал Сервис, Энергия.</p>
 
@@ -106,16 +107,18 @@
             <p>- Бесплатная доставка по г. Москва (в пределах МКАД) при заказе от 20 000 руб.</p>
             <p>- Отгрузка заказов производится со склада в Москве.</p>
             <p>- С удовольствием составим Договор поставки, для сотрудничества.</p>
-            <p>Подробнее о условиях доставки в разделе <NuxtLink to="/help/delivery" class="text-teal-500">Доставка</NuxtLink></p>
+            <p>Подробнее о условиях доставки в разделе <NuxtLink to="/help/delivery" class="text-teal-500">Доставка
+                </NuxtLink>
+            </p>
         </div>
     </div>
 </template>
 
 <script setup>
 defineProps({
-	product: {
-		type: Object,
-		default: () => ({})
-	}
+    product: {
+        type: Object,
+        default: () => ({})
+    }
 })
 </script>
