@@ -12,7 +12,7 @@
         <div v-for="category in categories" :key="category.id"
           class="card bg-teal-400 shadow-2xl p-6 border-teal-300 border rounded-xl relative flex flex-col">
           <div class="relative w-full h-48 rounded-xl overflow-hidden">
-            <!-- <img :src="category.image" :alt="category.name" class="w-full h-full object-cover" /> -->
+            <img :src="category.thumbnail" :alt="category.name" class="w-full h-full object-cover" />
           </div>
           <div class="absolute top-0 left-4 p-2 rounded-xl text-white text-xl font-bold backdrop-blur-xl">
             {{ category.name }}

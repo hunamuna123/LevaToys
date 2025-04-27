@@ -15,6 +15,34 @@
         <form @submit.prevent="sendData" class="mt-6">
           <div class="grid gap-y-4">
             <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                ФИО
+              </label>
+              <input class="w-full px-4 py-2 border rounded-lg text-sm focus:ring-teal-500 focus:border-teal-500"
+                required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                Название компании
+              </label>
+              <input class="w-full px-4 py-2 border rounded-lg text-sm focus:ring-teal-500 focus:border-teal-500"
+                required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                ИНН
+              </label>
+              <input class="w-full px-4 py-2 border rounded-lg text-sm focus:ring-teal-500 focus:border-teal-500"
+                required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                E-mail
+              </label>
+              <input class="w-full px-4 py-2 border rounded-lg text-sm focus:ring-teal-500 focus:border-teal-500"
+                required />
+            </div>
+            <div>
               <label for="phone-input" class="block text-sm font-medium text-gray-700 mb-1">
                 Номер телефона
               </label>
@@ -55,6 +83,12 @@ export default {
   middleware: 'auth',
   data() {
     return {
+      name: "",
+      surname: "",
+      patronymic: "",
+      name_company: "",
+      inn: "",
+      email: "",
       phone: "",
       error: "",
       errorBoolen: false,
@@ -93,6 +127,9 @@ export default {
         this.pinRefs[`pin${index - 1}`]?.focus();
       }
     },
+    async regUser() {
+
+    },
     async submitPinCode() {
       let code = this.pinDigits.join("");
       let cleaned = this.phone.replace(/\D/g, "");
@@ -112,7 +149,7 @@ export default {
 
         accessToken.value = res.data.data.access_token;
         refreshToken.value = res.data.data.refresh_token;
-
+        regUser()
         this.$router.push("/");
       } catch (error) {
         this.errorBoolen = true;
