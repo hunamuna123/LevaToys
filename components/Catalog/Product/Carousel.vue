@@ -18,7 +18,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -31,7 +31,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -44,7 +44,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -57,7 +57,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -70,7 +70,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -83,7 +83,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -103,7 +103,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -114,7 +114,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -125,7 +125,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -136,7 +136,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -147,7 +147,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>
@@ -158,7 +158,7 @@
 						>
 							<img
 								class="w-full h-full object-cover"
-								src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+								src="/toy.png"
 								alt=""
 							/>
 						</div>

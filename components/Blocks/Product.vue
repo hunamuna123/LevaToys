@@ -25,25 +25,25 @@
     </div>
     <div class="border-b border-gray-200 mb-6">
       <nav class="flex justify-between gap-x-2" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-        <div class="justify-start items-center flex text-md md:text-2xl px-4 ">Популярные товары</div>
+        <div class="justify-start items-center flex text-sm md:text-2xl px-4 ">Популярные товары</div>
         <div class="flex gap-x-1 justify-end">
           <button type="button"
             class="hs-tab-active:font-semibold hs-tab-active:border-teal-600 hs-tab-active:text-teal-600 py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-teal-600 focus:outline-hidden focus:text-teal-600 disabled:opacity-50 disabled:pointer-events-none active"
             id="tabs-with-icons-item-1" aria-selected="true" data-hs-tab="#tabs-with-icons-1"
             aria-controls="tabs-with-icons-1" role="tab">
-            Категория 1
+            Хиты
           </button>
           <button type="button"
             class="hs-tab-active:font-semibold hs-tab-active:border-teal-600 hs-tab-active:text-teal-600 py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-teal-600 focus:outline-hidden focus:text-teal-600 disabled:opacity-50 disabled:pointer-events-none"
             id="tabs-with-icons-item-2" aria-selected="false" data-hs-tab="#tabs-with-icons-2"
             aria-controls="tabs-with-icons-2" role="tab">
-            Категория 2
+            Акции
           </button>
           <button type="button"
             class="hs-tab-active:font-semibold hs-tab-active:border-teal-600 hs-tab-active:text-teal-600 py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-teal-600 focus:outline-hidden focus:text-teal-600 disabled:opacity-50 disabled:pointer-events-none"
             id="tabs-with-icons-item-3" aria-selected="false" data-hs-tab="#tabs-with-icons-3"
             aria-controls="tabs-with-icons-3" role="tab">
-            Категория 3
+            Новинки
           </button>
         </div>
       </nav>
