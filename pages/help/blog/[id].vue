@@ -35,6 +35,9 @@ const fetchNews = async () => {
       // Set default image if no image is provided
       if (!result.data.image || result.data.image.length === 0) {
         result.data.image = ['/toy.png']
+      } else {
+        // Extract the image URL from the image object
+        result.data.image = result.data.image.map(img => img.image)
       }
       news.value = result.data
     } else {
@@ -51,6 +54,12 @@ const fetchNews = async () => {
 onMounted(() => {
   fetchNews()
 })
+const formattedImageUrl = (images) => {
+	if (!images || images.length === 0) return '/toy.png'
+	const imageUrl = images[0]?.image || images[0]
+	return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+}
+
 </script>
 <template>
 	<NuxtLayout>
@@ -70,7 +79,7 @@ onMounted(() => {
 
 				<img 
 					v-if="news.image?.length > 0"
-					:src="news.image[0]" 
+					:src="formattedImageUrl(news.image)" 
 					:alt="news.name" 
 					class="w-full md:р-64 h-128 object-cover rounded-lg shadow-md" 
 				/>

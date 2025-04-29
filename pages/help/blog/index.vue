@@ -9,8 +9,7 @@
 							class="group hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 p-3 rounded-xl transition"
 							href="#">
 							<div class="p-2 w-full h-50 overflow-hidden">
-								<img class="w-full h-full rounded-xl object-fill" :src="formattedImageUrl(card.image)"
-									:alt="card.name" />
+								<img class="w-full h-full rounded-xl object-cover" :src="formattedImageUrl(card.image)":alt="card.name" />
 							</div>
 							<h3 class="text-xl p-2 text-gray-800">
 								{{ card.name }}
@@ -47,7 +46,7 @@ const loading = ref(true)
 
 const formattedImageUrl = (images) => {
 	if (!images || images.length === 0) return '/toy.png'
-	const imageUrl = images[0]
+	const imageUrl = images[0]?.image || images[0]
 	return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
 }
 

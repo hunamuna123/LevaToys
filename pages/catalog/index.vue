@@ -83,8 +83,10 @@ const updateSort = (sortOption) => {
 	fetchProducts();
 };
 
+const loadingIndicator = useLoadingIndicator()
 const fetchProducts = async () => {
 	isProductsLoading.value = true;
+	
 	try {
 		const query = new URLSearchParams();
 		Object.entries(route.query).forEach(([key, value]) => {
@@ -105,11 +107,14 @@ const fetchProducts = async () => {
 				'accept': 'application/json',
 			},
 		});
+	
+		loadingIndicator.start() // Запуск индикатора
 		const data = await response.json();
 		products.value = data;
 	} catch (err) {
 		console.error('Ошибка при загрузке продуктов:', err);
 	} finally {
+		loadingIndicator.finish() // Остановка индикатора
 		isProductsLoading.value = false;
 	}
 };

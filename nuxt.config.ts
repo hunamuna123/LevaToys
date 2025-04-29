@@ -12,4 +12,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/image'
   ],
+  app: {
+    loadingIndicator: true,
+  },
 });
