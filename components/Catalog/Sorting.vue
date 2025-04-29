@@ -1,7 +1,7 @@
 <template>
 	<div class="w-full flex items-center justify-between my-2">
 		<h3 class="text-xl font-semibold">Результаты</h3>
-		<div class="flex flex-row gap-3">
+		<div class="flex flex-row gap-1">
 			<CatalogModalF />
 			<div class="hs-dropdown relative [--gpu-acceleration:false] inline-flex" id="dropdown">
 				<button id="hs-dropdown-scale-animation" type="button"
