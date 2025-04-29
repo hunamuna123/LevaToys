@@ -14,22 +14,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect } from 'vue'
+import { ref, onMounted, watchEffect, computed } from 'vue'
 import { useFetch, useRoute } from '#app'
 import { api } from '@/store/api.js'
+import { isAuthenticated, getAuthHeaders } from '@/utils/auth'
 
 const productData = ref(null)
 const route = useRoute()
+const apiStore = api()
+const url = computed(() => apiStore.url)
 
 const id = route.params.id
-const apiUrl = api().url
 
 const {
 	data: product,
 	pending: isLoading,
 	refresh,
-} = useFetch(() => `http://85.175.100.129:72/api/v1/product/${id}`, {
+} = useFetch(() => {
+	const endpoint = isAuthenticated() ? 'api/v1/auth/product/auth/' : 'api/v1/product/'
+	return `${url.value}${endpoint}${id}`
+}, {
 	headers: {
+		...getAuthHeaders(),
 		accept: 'application/json',
 	},
 })

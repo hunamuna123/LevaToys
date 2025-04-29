@@ -38,6 +38,7 @@
 import { ref, computed, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { api } from "@/store/api.js";
+import { isAuthenticated, getAuthHeaders } from '@/utils/auth';
 
 const apiStore = api();
 const url = computed(() => apiStore.url);
@@ -97,7 +98,13 @@ const fetchProducts = async () => {
 			query.set('page', '1');
 		}
 
-		const response = await fetch(`${url.value}api/v1/product?${query.toString()}`);
+		const endpoint = isAuthenticated() ? 'api/v1/auth/product/auth/' : 'api/v1/product/';
+		const response = await fetch(`${url.value}${endpoint}?${query.toString()}`, {
+			headers: {
+				...getAuthHeaders(),
+				'accept': 'application/json',
+			},
+		});
 		const data = await response.json();
 		products.value = data;
 	} catch (err) {

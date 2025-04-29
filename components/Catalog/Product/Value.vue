@@ -59,16 +59,23 @@
 		
 		<div class="mt-6 flex items-center justify-between gap-4">
 			<div class="flex flex-col gap-1">
-				<h1 class="text-3xl font-bold">
-					{{ product?.price ? product.price.toLocaleString('de-DE') : '0' }}
-					₽
-				</h1>
-				<h4 class="text-lg font-medium text-gray-400" v-if="product?.oldPrice">
-					<del>
-						{{ product.oldPrice.toLocaleString('de-DE') }}
+				<template v-if="isAuthenticated()">
+					<h1 class="text-3xl font-bold">
+						{{ product?.price ? product.price.toLocaleString('de-DE') : '0' }}
 						₽
-					</del>
-				</h4>
+					</h1>
+					<h4 class="text-lg font-medium text-gray-400" v-if="product?.oldPrice">
+						<del>
+							{{ product.oldPrice.toLocaleString('de-DE') }}
+							₽
+						</del>
+					</h4>
+				</template>
+				<template v-else>
+					<NuxtLink to="/auth/login" class="text-teal-600 hover:text-teal-700 font-medium text-xl">
+						Войдите, чтобы увидеть цену
+					</NuxtLink>
+				</template>
 			</div>
 			<div>
 				<button @click="addToCart(product)"
@@ -94,6 +101,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+import { isAuthenticated } from '@/utils/auth'
 
 defineProps({
 	product: {

@@ -16,9 +16,14 @@
         <p class="mt-0.5 line-clamp-3">
           {{ product.description }}
         </p>
-        <h3 class="text-2xl font-bold mt-auto">
+        <div v-if="isAuthenticated()" class="text-2xl font-bold mt-auto">
           {{ product.price }} ₽
-        </h3>
+        </div>
+        <div v-else class="mt-auto">
+          <NuxtLink to="/auth/login" class="text-teal-600 hover:text-teal-700 font-medium">
+            Войдите, чтобы увидеть цену
+          </NuxtLink>
+        </div>
       </div>
     </div>
 
@@ -33,6 +38,7 @@
 
 <script setup>
 import { defineProps, computed } from 'vue'
+import { isAuthenticated } from '@/utils/auth'
 
 const props = defineProps({
   product: {

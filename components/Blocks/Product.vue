@@ -49,7 +49,6 @@
       </nav>
     </div>
 
-    <!-- Контент табов с карточками -->
     <div id="tabs-with-icons-1" role="tabpanel" aria-labelledby="tabs-with-icons-item-1">
       <div class="overflow-x-auto md:overflow-visible pb-4">
         <div
@@ -59,11 +58,18 @@
             <div v-for="tab in tab1.slice(0, 4)" :key="tab.id"
               class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
               <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
-                <img :src="tab.thumbnail || '/toy.png'" :alt="tab.name"
+                <img :src="formattedImageUrl(tab.images)" :alt="tab.name"
                   class="h-full w-auto object-contain rounded-xl" />
               </div>
               <div class="p-4 md:p-6 md:pt-2">
-                <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                <template v-if="isAuthenticated()">
+                  <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                </template>
+                <template v-else>
+                  <NuxtLink to="/auth/login" class="block mb-1 text-md font-semibold text-teal-600 hover:text-teal-700">
+                    Войдите, чтобы увидеть цену
+                  </NuxtLink>
+                </template>
                 <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
                 <p class="mt-3 text-gray-500">{{ tab.description }}</p>
               </div>
@@ -93,11 +99,18 @@
             <div v-for="tab in tab2.slice(0, 4)" :key="tab.id"
               class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
               <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
-                <img :src="tab.thumbnail || '/toy.png'" :alt="tab.name"
+                <img :src="formattedImageUrl(tab.images)" :alt="tab.name"
                   class="h-full w-auto object-contain rounded-xl" />
               </div>
               <div class="p-4 md:p-6 md:pt-2">
-                <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                <template v-if="isAuthenticated()">
+                  <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                </template>
+                <template v-else>
+                  <NuxtLink to="/auth/login" class="block mb-1 text-md font-semibold text-teal-600 hover:text-teal-700">
+                    Войдите, чтобы увидеть цену
+                  </NuxtLink>
+                </template>
                 <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
                 <p class="mt-3 text-gray-500">{{ tab.description }}</p>
               </div>
@@ -126,11 +139,18 @@
             <div v-for="tab in tab3.slice(0, 4)" :key="tab.id"
               class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
               <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
-                <img :src="tab.thumbnail || '/toy.png'" :alt="tab.name"
+                <img :src="formattedImageUrl(tab.images)" :alt="tab.name"
                   class="h-full w-auto object-contain rounded-xl" />
               </div>
               <div class="p-4 md:p-6 md:pt-2">
-                <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                <template v-if="isAuthenticated()">
+                  <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                </template>
+                <template v-else>
+                  <NuxtLink to="/auth/login" class="block mb-1 text-md font-semibold text-teal-600 hover:text-teal-700">
+                    Войдите, чтобы увидеть цену
+                  </NuxtLink>
+                </template>
                 <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
                 <p class="mt-3 text-gray-500">{{ tab.description }}</p>
               </div>
@@ -154,6 +174,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { api } from "@/store/api.js"
+import { isAuthenticated, getAuthHeaders } from '@/utils/auth';
 
 const apiStore = api()
 const url = computed(() => apiStore.url)
@@ -165,15 +186,37 @@ const error = ref(null);
 const toasts = ref([]);
 const loading = ref(false);
 
+const formattedImageUrl = (images) => {
+  if (!images?.[0]?.image) return '/toy.png'
+  const imageUrl = images[0].image
+  return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+}
+
 const fetchProducts = async () => {
   loading.value = true;
   error.value = null;
 
   try {
+    const endpoint = isAuthenticated() ? 'api/v1/auth/product/index' : 'api/v1/product/index';
     const [response1, response2, response3] = await Promise.all([
-      fetch(`${url.value}api/v1/product/index?hit=true`),
-      fetch(`${url.value}api/v1/product/index?news=true`),
-      fetch(`${url.value}api/v1/product/index?promotion=true`),
+      fetch(`${url.value}${endpoint}?hit=true`, {
+        headers: {
+          ...getAuthHeaders(),
+          'accept': 'application/json',
+        },
+      }),
+      fetch(`${url.value}${endpoint}?news=true`, {
+        headers: {
+          ...getAuthHeaders(),
+          'accept': 'application/json',
+        },
+      }),
+      fetch(`${url.value}${endpoint}?promotion=true`, {
+        headers: {
+          ...getAuthHeaders(),
+          'accept': 'application/json',
+        },
+      }),
     ]);
 
     const [result1, result2, result3] = await Promise.all([
