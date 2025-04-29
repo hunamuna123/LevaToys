@@ -105,18 +105,21 @@
                     <div class="md:mx-6 lg:mx-8 md:bg-white md:rounded-lg md:shadow-md">
                       <!-- Grid -->
                       <div class="py-1 md:p-2 md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="flex flex-col">
+                          <!-- Link -->
+                          <NuxtLink to="/catalog" class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
+
+                            <div class="grow">
+                              <p class="font-medium text-sm text-gray-800">Все категории</p>
+                            </div>
+                          </NuxtLink>
+                        </div>
                         <div v-for="category in categories" :key="category.id" class="flex flex-col">
                           <!-- Link -->
                           <NuxtLink :to="`/catalog/?category_id=${category.id}`" class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
-                            <svg class="shrink-0 size-4 mt-1 text-gray-800" xmlns="http://www.w3.org/2000/svg"
-                              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                            </svg>
+
                             <div class="grow">
                               <p class="font-medium text-sm text-gray-800">{{ category.name }}</p>
-                              <p class="text-sm text-gray-500">{{ category.description }}</p>
                             </div>
                           </NuxtLink>
                         </div>
