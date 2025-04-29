@@ -2,65 +2,95 @@
   <div class="px-4 py-10 sm:px-4 lg:px-8 lg:py-14 mx-auto">
     <div class="border-b border-gray-200 mb-6">
       <nav class="flex justify-between gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-        <div class="justify-start items-center flex text-2xl  mb-2">Полезные статьи</div>
+        <div class="justify-start items-center flex text-2xl mb-2">Полезные статьи</div>
       </nav>
     </div>
-    <div class="overflow-x-auto md:overflow-visible  pb-4">
+    <div class="overflow-x-auto md:overflow-visible pb-4">
       <div
-        class="grid grid-flow-col auto-cols-[270px] gap-4 md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
-        <a v-for="(card, index) in tab1Cards" :key="index"
-          class="group hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-xl  transition" href="#">
-
-          <div class=" p-2  w-full h-30 md:h-40 overflow-hidden  ">
-            <img  class="w-full h-full rounded-xl object-cover" :src="card.image" :alt="card.title" />
+        class="grid grid-flow-col auto-cols-[270px]  gap-4 md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
+        <SkeletonNews v-if="loading" v-for="n in 4" />
+        <template v-else>
+          <div v-for="(card, index) in news.slice(0, 4)" :key="card.id"
+            class="group hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 p-3 rounded-xl transition" href="#">
+            <div class="p-2 w-full h-50  overflow-hidden">
+              <img class="w-full h-full rounded-xl object-cover" :src="formattedImageUrl(card.image)" :alt="card.name" />
+            </div>
+            <h3 class="text-xl p-2 text-gray-800">
+              {{ card.name }}
+            </h3>
+            <div class="text-sm p-2 text-gray-600 line-clamp-3" v-html="getFirstParagraph(card.description)"></div>
+            <p class="mt-3 inline-flex items-center gap-x-1 p-2 text-sm font-semibold text-gray-800">
+              <NuxtLink :to="`/help/blog/${card.id}`">Читать подробнее</NuxtLink> 
+              <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </p>
           </div>
-          <h3 class=" text-xl p-2  text-gray-800">
-            {{ card.title }}
-          </h3>
-          <p class=" text-sm p-2  text-gray-600">
-            {{ card.description }}
-          </p>
-          <p class="mt-3 inline-flex items-center gap-x-1 p-2 text-sm font-semibold text-gray-800">
-            Читать подробнее
-            <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </p>
-        </a>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
-let tab1Cards = ref([
-  {
-    image: '/toy.png',
-    price: 549,
-    title: 'Будет ли модная игрушка капибара в 2025?',
-    description: 'Обзоры товаров'
-  },
-  {
-    image: '/toy.png',
-    price: 349,
-    title: 'Будет ли модная игрушка капибара в 2025?',
-    description: 'ОБзор сисек'
-  },
-  {
-    image: '/toy.png',
-    price: 799,
-    title: 'Будет ли модная игрушка капибара в 2025?',
-    description: 'Товары для даунов'
-  },
-  {
-    image: '/toy.png',
-    price: 999,
-    title: 'Будет ли модная игрушка капибара в 2025?',
-    description: 'Как дела сосал'
+import { ref, onMounted, computed } from 'vue'
+import { api } from "@/store/api.js"
+import { isAuthenticated, getAuthHeaders } from '@/utils/auth'
+
+const apiStore = api()
+const url = computed(() => apiStore.url)
+const news = ref([])
+const error = ref(null)
+const loading = ref(true)
+
+const formattedImageUrl = (images) => {
+  if (!images || images.length === 0) return '/toy.png'
+  const imageUrl = images[0]
+  return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+}
+
+const getFirstParagraph = (html) => {
+  if (!html) return ''
+  // Create a temporary div to parse HTML
+  const tempDiv = document.createElement('div')
+  tempDiv.innerHTML = html
+  // Get the first paragraph or return the first text content
+  const firstP = tempDiv.querySelector('p')
+  return firstP ? firstP.textContent : tempDiv.textContent
+}
+
+const fetchNews = async () => {
+  loading.value = true
+  error.value = null
+
+  try {
+    const endpoint = 'api/v1/news/'
+    const response = await fetch(`${url.value}${endpoint}`, {
+      headers: {
+        ...getAuthHeaders(),
+        'accept': 'application/json',
+      },
+    })
+
+    const result = await response.json()
+
+    if (result.message === 'OK') {
+      news.value = result.data
+    } else {
+      error.value = 'Ошибка запроса новостей'
+    }
+  } catch (err) {
+    error.value = 'Ошибка запроса новостей'
+    console.error('Ошибка запроса', err)
+  } finally {
+    loading.value = false
   }
-])
+}
+
+onMounted(() => {
+  fetchNews()
+})
 </script>

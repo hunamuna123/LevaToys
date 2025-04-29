@@ -54,6 +54,7 @@
         <div
           class="grid grid-flow-col auto-cols-[270px] gap-4 md:overflow-visible md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
           <SkeletonProduct v-if="loading" />
+
           <template v-else>
             <div v-for="tab in tab1.slice(0, 4)" :key="tab.id"
               class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
@@ -94,7 +95,9 @@
       <div class="overflow-x-auto md:overflow-visible pb-4">
         <div
           class="grid grid-flow-col auto-cols-[270px] gap-4 md:overflow-visible md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
+
           <SkeletonProduct v-if="loading" />
+
           <template v-else>
             <div v-for="tab in tab2.slice(0, 4)" :key="tab.id"
               class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
@@ -134,7 +137,9 @@
       <div class="overflow-x-auto md:overflow-visible pb-4">
         <div
           class="grid grid-flow-col auto-cols-[270px] gap-4 md:overflow-visible md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
-          <SkeletonProduct v-if="loading" />
+      
+            <SkeletonProduct v-if="loading" />
+       
           <template v-else>
             <div v-for="tab in tab3.slice(0, 4)" :key="tab.id"
               class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
@@ -184,7 +189,7 @@ const tab3 = ref([]);
 
 const error = ref(null);
 const toasts = ref([]);
-const loading = ref(false);
+const loading = ref(true);
 
 const formattedImageUrl = (images) => {
   if (!images?.[0]?.image) return '/toy.png'

@@ -35,7 +35,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { api } from "@/store/api.js"
-import SkeletonCategories from '@/components/Catalog/Skeleton/Categories.vue'
+import SkeletonCategories from '~/components/Skeleton/Categories.vue'
 
 const apiStore = api()
 const url = computed(() => apiStore.url)
