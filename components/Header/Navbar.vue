@@ -107,7 +107,7 @@
                       <div class="py-1 md:p-2 md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div v-for="category in categories" :key="category.id" class="flex flex-col">
                           <!-- Link -->
-                          <NuxtLink :to="`/catalog/${category.id}`" class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
+                          <NuxtLink :to="`/catalog/?category_id=${category.id}`" class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
                             <svg class="shrink-0 size-4 mt-1 text-gray-800" xmlns="http://www.w3.org/2000/svg"
                               width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -136,7 +136,7 @@
 
             <div class=" flex flex-wrap items-center gap-x-1.5">
               <HeaderNavprofile v-if="accessToken" />
-              <NuxtLink v-else to="/auth/login"
+              <NuxtLink v-else to="/auth/register"
                 class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg  bg-white text-gray-800 shadow-2xs hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
                 href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

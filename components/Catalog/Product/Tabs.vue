@@ -34,44 +34,36 @@
             <table class="min-w-full text-sm text-left text-gray-700">
                 <tbody>
                     <tr class="border-b border-gray-300">
-                        <th class="py-4 px-4 font-medium w-1/2">Ассортимент</th>
-                        <td class="py-4 px-4">Без возможности выбора</td>
+                        <th class="py-4 px-4 font-medium w-1/2">Вид</th>
+                        <td class="py-4 px-4">{{ product?.view_product || 'Отсутствует' }}</td>
                     </tr>
                     <tr class="border-b border-gray-300">
-                        <th class="py-4 px-4 font-medium">Материал</th>
-                        <td class="py-4 px-4">Искусственный мех, текстильные материалы, полисифирное волокно</td>
+                        <th class="py-4 px-4 font-medium">Ассортимент</th>
+                        <td class="py-4 px-4">{{ product?.assortment || 'Отсутствует' }}</td>
                     </tr>
                     <tr class="border-b border-gray-300">
-                        <th class="py-4 px-4 font-medium">Штрих код</th>
-                        <td class="py-4 px-4">4603301200320</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <th class="py-4 px-4 font-medium">Размер</th>
-                        <td class="py-4 px-4">100 см.</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <th class="py-4 px-4 font-medium">Пол</th>
-                        <td class="py-4 px-4">Унисекс</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <th class="py-4 px-4 font-medium">Возраст</th>
-                        <td class="py-4 px-4">от 3-х лет</td>
-                    </tr>
-                    <tr class="border-b border-gray-300 ">
-                        <th class="py-4 px-4 font-medium">Сертификат</th>
-                        <td class="py-4 px-4">EAC</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <th class="py-4 px-4 font-medium">Условия хранения</th>
-                        <td class="py-4 px-4">Запрещается хранить в помещениях с высокой влажностью</td>
+                        <th class="py-4 px-4 font-medium">Вес</th>
+                        <td class="py-4 px-4">{{ product?.weight || 'Отсутствует' }}</td>
                     </tr>
                     <tr class="border-b border-gray-300">
                         <th class="py-4 px-4 font-medium">Тип упаковки</th>
-                        <td class="py-4 px-4">На выбор</td>
+                        <td class="py-4 px-4">{{ product?.type_packaging || 'Отсутствует' }}</td>
                     </tr>
-                    <tr>
-                        <th class="py-4 px-4 font-medium">Вес</th>
-                        <td class="py-4 px-4">325 грамм</td>
+                    <tr class="border-b border-gray-300">
+                        <th class="py-4 px-4 font-medium">Условия хранения</th>
+                        <td class="py-4 px-4">{{ product?.storage_conditions || 'Отсутствует' }}</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <th class="py-4 px-4 font-medium">Сертификат</th>
+                        <td class="py-4 px-4">{{ product?.certificate || 'Отсутствует' }}</td>
+                    </tr>
+                    <tr class="border-b border-gray-300 ">
+                        <th class="py-4 px-4 font-medium">Возраст</th>
+                        <td class="py-4 px-4">{{ product?.age || 'Отсутствует' }}</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                        <th class="py-4 px-4 font-medium">Материал</th>
+                        <td class="py-4 px-4">{{ product?.material || 'Отсутствует' }}</td>
                     </tr>
                 </tbody>
             </table>

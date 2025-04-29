@@ -26,7 +26,7 @@
                 </svg>
               </button>
             </NuxtLink>
-          </div>
+          </div> 
         </div>
       </template>
     </div>

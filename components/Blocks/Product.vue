@@ -56,23 +56,57 @@
           class="grid grid-flow-col auto-cols-[270px] gap-4 md:overflow-visible md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
           <SkeletonProduct v-if="loading" />
           <template v-else>
-            <div v-for="product in products" :key="product.id"
+            <div v-for="tab in tab1.slice(0, 4)" :key="tab.id"
               class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
               <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
-                <img :src="product.thumbnail || '/toy.png'" :alt="product.name"
+                <img :src="tab.thumbnail || '/toy.png'" :alt="tab.name"
                   class="h-full w-auto object-contain rounded-xl" />
               </div>
               <div class="p-4 md:p-6 md:pt-2">
-                <span class="block mb-1 text-md font-semibold uppercase">{{ product.product_code }} ₽</span>
-                <h3 class="text-xl font-semibold text-gray-800">{{ product.name }}</h3>
-                <p class="mt-3 text-gray-500">{{ product.description }}</p>
+                <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
+                <p class="mt-3 text-gray-500">{{ tab.description }}</p>
               </div>
               <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
-                <NuxtLink :to="`/catalog/${product.id}`"
+                <NuxtLink :to="`/catalog/${tab.id}`"
                   class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
                   Подробнее
                 </NuxtLink>
-                <button @click="addToCart(product)"
+                <button @click="addToCart(tab)"
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  В корзину
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="tabs-with-icons-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-2">
+      <div class="overflow-x-auto md:overflow-visible pb-4">
+        <div
+          class="grid grid-flow-col auto-cols-[270px] gap-4 md:overflow-visible md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
+          <SkeletonProduct v-if="loading" />
+          <template v-else>
+            <div v-for="tab in tab2.slice(0, 4)" :key="tab.id"
+              class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
+              <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
+                <img :src="tab.thumbnail || '/toy.png'" :alt="tab.name"
+                  class="h-full w-auto object-contain rounded-xl" />
+              </div>
+              <div class="p-4 md:p-6 md:pt-2">
+                <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
+                <p class="mt-3 text-gray-500">{{ tab.description }}</p>
+              </div>
+              <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
+                <NuxtLink :to="`/catalog/${tab.id}`"
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  Подробнее
+                </NuxtLink>
+                <button @click="addToCart(tab)"
                   class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
                   В корзину
                 </button>
@@ -83,49 +117,99 @@
       </div>
     </div>
 
-    <div id="tabs-with-icons-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-2">
-      2
-    </div>
-
     <div id="tabs-with-icons-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-3">
-      3
+      <div class="overflow-x-auto md:overflow-visible pb-4">
+        <div
+          class="grid grid-flow-col auto-cols-[270px] gap-4 md:overflow-visible md:grid-cols-2 lg:grid-cols-4 md:auto-cols-auto md:grid-flow-row">
+          <SkeletonProduct v-if="loading" />
+          <template v-else>
+            <div v-for="tab in tab3.slice(0, 4)" :key="tab.id"
+              class="group flex flex-col h-full bg-white border border-gray-200 shadow-2xs rounded-xl">
+              <div class="flex items-center justify-center bg-gray-50 p-4 rounded-xl overflow-hidden">
+                <img :src="tab.thumbnail || '/toy.png'" :alt="tab.name"
+                  class="h-full w-auto object-contain rounded-xl" />
+              </div>
+              <div class="p-4 md:p-6 md:pt-2">
+                <span class="block mb-1 text-md font-semibold uppercase">{{ tab.product_code }} ₽</span>
+                <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
+                <p class="mt-3 text-gray-500">{{ tab.description }}</p>
+              </div>
+              <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
+                <NuxtLink :to="`/catalog/${tab.id}`"
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  Подробнее
+                </NuxtLink>
+                <button @click="addToCart(tab)"
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  В корзину
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { api } from "@/store/api.js"
 
 const apiStore = api()
 const url = computed(() => apiStore.url)
+const tab1 = ref([]);
+const tab2 = ref([]);
+const tab3 = ref([]);
 
-const loading = ref(true)
-const products = ref([])
-const error = ref(null)
-const toasts = ref([])
+const error = ref(null);
+const toasts = ref([]);
+const loading = ref(false);
 
 const fetchProducts = async () => {
-  try {
-    loading.value = true
-    const response = await fetch(`${url.value}api/v1/product/index`)
-    const result = await response.json()
+  loading.value = true;
+  error.value = null;
 
-    if (result.message === 'OK') {
-      products.value = result.data
+  try {
+    const [response1, response2, response3] = await Promise.all([
+      fetch(`${url.value}api/v1/product/index?hit=true`),
+      fetch(`${url.value}api/v1/product/index?news=true`),
+      fetch(`${url.value}api/v1/product/index?promotion=true`),
+    ]);
+
+    const [result1, result2, result3] = await Promise.all([
+      response1.json(),
+      response2.json(),
+      response3.json(),
+    ]);
+
+    if (result1.message === 'OK') {
+      tab1.value = result1.data;
     } else {
-      error.value = 'ошибка запроса products'
+      error.value = 'Ошибка запроса hit';
     }
+
+    if (result2.message === 'OK') {
+      tab2.value = result2.data;
+    } else {
+      error.value = 'Ошибка запроса news';
+    }
+
+    if (result3.message === 'OK') {
+      tab3.value = result3.data;
+    } else {
+      error.value = 'Ошибка запроса promotion';
+    }
+
   } catch (err) {
-    error.value = 'ошибка запроса products'
-    console.error('ошибка запроса', err)
+    error.value = 'Ошибка запроса products';
+    console.error('Ошибка запроса', err);
   } finally {
-    loading.value = false
+    loading.value = false;
   }
-}
+};
+
 
 const addToCart = (product) => {
-  
   const existingCart = JSON.parse(localStorage.getItem('busket') || '[]')
   existingCart.push(product)
   localStorage.setItem('busket', JSON.stringify(existingCart))
@@ -141,8 +225,8 @@ onMounted(() => {
   fetchProducts()
 })
 
-
 </script>
+
 
 <style scoped>
 .toast-enter-active,

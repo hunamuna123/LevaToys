@@ -3,6 +3,7 @@
     <h2 class="text-lg font-semibold max-lg:hidden">Фильтры</h2>
     <hr class="max-lg:hidden" />
     <div class="flex flex-col gap-6 h-full overflow-y-scroll [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent">
+      <CatalogFiltersSearch/>
       <CatalogFiltersPrice />
       <CatalogFiltersBrand :brands="filters.brand" />
       <CatalogFiltersCategories :categories="filters.category" />
