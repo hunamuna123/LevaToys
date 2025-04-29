@@ -184,13 +184,40 @@ function loadCart(): void {
         const stored = localStorage.getItem('busket')
         if (stored) {
             const parsed = JSON.parse(stored)
-            cartItems.value = parsed.map((item: CartItem) => ({
-                ...item,
-                quantity: item.quantity || 1
-            }))
+            if (Array.isArray(parsed)) {
+                cartItems.value = parsed
+                    .filter(item => item && typeof item === 'object' && item.id) // Проверяем что это валидный объект
+                    .map((item: Partial<CartItem>) => ({
+                        id: item.id || 0,
+                        name: item.name || 'Товар',
+                        description: item.description,
+                        product_code: item.product_code,
+                        article: item.article,
+                        rating: item.rating,
+                        in_stock: item.in_stock,
+                        count_stok: item.count_stok,
+                        price: item.price || 0,
+                        oldPrice: item.oldPrice,
+                        thumbnail: item.thumbnail,
+                        feedback_count: item.feedback_count,
+                        created: item.created,
+                        updated: item.updated,
+                        category: item.category,
+                        color: item.color,
+                        brand: item.brand,
+                        sizes: item.sizes,
+                        colors: item.colors,
+                        images: item.images,
+                        quantity: Math.max(1, Math.min(item.quantity || 1, item.count_stok || 99))
+                    }))
+            } else {
+                cartItems.value = []
+            }
         }
     } catch (error) {
         console.error('Ошибка при загрузке корзины:', error)
+        cartItems.value = [] // В случае ошибки очищаем корзину
+        localStorage.removeItem('busket') // И очищаем localStorage
     }
 }
 
