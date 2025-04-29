@@ -167,7 +167,7 @@
 
 				<button
 					type="button"
-					class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg transition-colors duration-200"
+					class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-black hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg transition-colors duration-200"
 				>
 					<span class="text-2xl" aria-hidden="true">
 						<svg
@@ -189,7 +189,7 @@
 				</button>
 				<button
 					type="button"
-					class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-e-lg transition-colors duration-200"
+					class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-black hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-e-lg transition-colors duration-200"
 				>
 					<span class="sr-only">Next</span>
 					<span class="text-2xl" aria-hidden="true">

@@ -47,19 +47,19 @@ const switchTab = (tabId) => {
 								<div class="flex flex-col gap-5">
 									<div>
 										<h6 class="text-gray-500 text-sm">Режим работы</h6>
-										<p class="mt-1 text-gray-800">
+										<p class="mt-1 text-black">
 											Пн. – Пт.: с 9:00 до 18:00
 										</p>
 									</div>
 									<div>
 										<h6 class="text-gray-500 text-sm">Телефон</h6>
-										<p class="mt-1 text-gray-800">
+										<p class="mt-1 text-black">
 											+7(495)129-33-41
 										</p>
 									</div>
 									<div>
 										<h6 class="text-gray-500 text-sm">E-mail</h6>
-										<p class="mt-1 text-gray-800 ">
+										<p class="mt-1 text-black ">
 											sales@plush.team
 										</p>
 									</div>

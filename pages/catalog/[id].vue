@@ -31,7 +31,7 @@ const {
 	pending: isLoading,
 	refresh,
 } = useFetch(() => {
-	const endpoint = isAuthenticated() ? 'api/v1/auth/product/auth/' : 'api/v1/product/'
+	const endpoint = isAuthenticated() ? 'api/v1/auth/product/' : 'api/v1/product/'
 	return `${url.value}${endpoint}${id}`
 }, {
 	headers: {

@@ -6,7 +6,7 @@
   </div>
   <div class="overflow-x-auto md:overflow-visible px-4 py-10 sm:px-4 lg:px-8">
     <div
-      class="grid grid-flow-col auto-cols-[80%] gap-4 md:grid-flow-row md:auto-cols-auto md:grid-cols-2 lg:grid-cols-3">
+      class="grid grid-flow-col auto-cols-[80%] gap-4 md:grid-flow-row md:auto-cols-auto  md:grid-cols-2 lg:grid-cols-3">
       <SkeletonCategories v-if="loading" />
       <template v-else>
         <div v-for="category in categories" :key="category.id"

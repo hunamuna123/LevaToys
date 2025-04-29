@@ -79,7 +79,7 @@ const switchTab = (tabId) => {
 									</svg>
 
 									<div class="grow">
-										<h3 class="md:text-lg font-semibold text-gray-800">
+										<h3 class="md:text-lg font-semibold text-black">
 											Plush.team – оптовый интернет-магазин мягкой игрушки.
 										</h3>
 										<p class="mt-1 text-gray-500">
@@ -107,7 +107,7 @@ const switchTab = (tabId) => {
 									</svg>
 
 									<div class="grow">
-										<h3 class="md:text-lg font-semibold text-gray-800">
+										<h3 class="md:text-lg font-semibold text-black">
 											Вы обратились по адресу!
 										</h3>
 										<p class="mt-1  text-gray-500">

@@ -73,7 +73,7 @@ const formattedImageUrl = (images) => {
 			</div>
 
 			<template v-else-if="news">
-				<p class="my-4 text-xl font-semibold text-gray-800">
+				<p class="my-4 text-xl font-semibold text-black">
 					{{ news.name }}
 				</p>
 

@@ -6,16 +6,16 @@
         class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
         <div class="py-2 sm:py-0 flex flex-col sm:flex-row sm:justify-start gap-y-2 sm:gap-y-0 sm:gap-x-6">
           <NuxtLink to="/company"
-            class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
             Компания</NuxtLink>
           <NuxtLink to="/help/delivery"
-            class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
             Доставка</NuxtLink>
           <NuxtLink to="/contacts"
-            class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
             Контакты</NuxtLink>
           <NuxtLink to="/help/blog"
-            class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
             Полезные статьи</NuxtLink>
         </div>
       </div>
@@ -24,10 +24,10 @@
   <header class="flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200">
     <nav class="relative  w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center gap-x-1">
-        <NuxtLink to="/" class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80"
+        <NuxtLink to="/" class="flex-none font-medium text-3xl text-teal-500 focus:outline-hidden focus:opacity-80"
           aria-label="Brand">LevaToys</NuxtLink>
         <button type="button"
-          class="hs-collapse-toggle md:hidden relative size-9 flex justify-center items-center font-medium text-sm rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+          class="hs-collapse-toggle md:hidden relative size-9 flex justify-center items-center font-medium text-sm rounded-lg border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
           id="hs-header-base-collapse" aria-expanded="false" aria-controls="hs-header-base"
           aria-label="Toggle navigation" data-hs-collapse="#hs-header-base">
           <svg class="hs-collapse-open:hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -61,16 +61,16 @@
                   class="hs-collapse block md:hidden overflow-hidden transition-all duration-300 basis-full grow">
                   <div class="py-2 md:py-0 flex flex-col md:flex-row md:justify-end gap-y-2 md:gap-y-0 md:gap-x-6">
                     <NuxtLink to="/company"
-                      class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
                       Компания</NuxtLink>
                     <NuxtLink to="/help/delivery"
-                      class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
                       Доставка</NuxtLink>
                     <NuxtLink to="/contacts"
-                      class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
                       Контакты</NuxtLink>
                     <NuxtLink to="/help/blog"
-                      class="font-medium text-sm text-gray-800 hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
                       Полезные статьи</NuxtLink>
                   </div>
                 </div>
@@ -92,7 +92,7 @@
                       <path d="M8 6h13" />
                     </svg> Каталог
                     <svg
-                      class="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
+                      class="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-3 ms-auto md:ms-1"
                       xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="m6 9 6 6 6-6" />
@@ -104,22 +104,22 @@
                     role="menu" aria-orientation="vertical" aria-labelledby="hs-header-base-mega-menu-fullwidth">
                     <div class="md:mx-6 lg:mx-8 md:bg-white md:rounded-lg md:shadow-md">
                       <!-- Grid -->
-                      <div class="py-1 md:p-2 md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      <div class="py-1 md:p-2 md:grid md:grid-cols-2 lg:grid-cols-3 gap-2">
                         <div class="flex flex-col">
                           <!-- Link -->
                           <NuxtLink to="/catalog" class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
 
                             <div class="grow">
-                              <p class="font-medium text-sm text-gray-800">Все категории</p>
+                              <p class="font-medium text-sm text-black">Все категории</p>
                             </div>
                           </NuxtLink>
                         </div>
                         <div v-for="category in categories" :key="category.id" class="flex flex-col">
                           <!-- Link -->
-                          <NuxtLink :to="`/catalog/?category_id=${category.id}`" class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
+                          <NuxtLink :to="`/catalog/?category_id=${category.id}`" class="p-3 flex gap-x-2 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
 
                             <div class="grow">
-                              <p class="font-medium text-sm text-gray-800">{{ category.name }}</p>
+                              <p class="font-medium text-sm text-black">{{ category.name }}</p>
                             </div>
                           </NuxtLink>
                         </div>
@@ -140,7 +140,7 @@
             <div class=" flex flex-wrap items-center gap-x-1.5">
               <HeaderNavprofile v-if="accessToken" />
               <NuxtLink v-else to="/auth/register"
-                class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg  bg-white text-gray-800 shadow-2xs hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
+                class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg  bg-white text-black shadow-2xs hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
                 href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

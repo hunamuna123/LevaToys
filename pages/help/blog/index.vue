@@ -11,12 +11,12 @@
 							<div class="p-2 w-full h-50 overflow-hidden">
 								<img class="w-full h-full rounded-xl object-cover" :src="formattedImageUrl(card.image)":alt="card.name" />
 							</div>
-							<h3 class="text-xl p-2 text-gray-800">
+							<h3 class="text-xl p-2 text-black">
 								{{ card.name }}
 							</h3>
 							<div class="text-sm p-2 text-gray-600 line-clamp-3"
 								v-html="getFirstParagraph(card.description)"></div>
-							<p class="mt-3 inline-flex items-center gap-x-1 p-2 text-sm font-semibold text-gray-800">
+							<p class="mt-3 inline-flex items-center gap-x-1 p-2 text-sm font-semibold text-black">
 								<NuxtLink :to="`/help/blog/${card.id}`">Читать подробнее</NuxtLink>
 								<svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
 									xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

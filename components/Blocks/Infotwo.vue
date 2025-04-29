@@ -10,7 +10,7 @@
           <li>Ваша бухгалтерия загружена от количества сопроводительной документации?</li>
           <li>Вам надоело, что Вы заказываете одну игрушку, а на момент оплаты номенклатура изменилась?</li>
         </ul>
-        <p class="font-semibold text-gray-800">Вы обратились по адресу!</p>
+        <p class="font-semibold text-black">Вы обратились по адресу!</p>
   
         <button class="bg-teal-500 rounded-xl hover:bg-teal-600 text-white font-bold py-2 px-4 rounded w-fit">
           Подробнее

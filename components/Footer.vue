@@ -6,18 +6,18 @@
         <div>
           <h4 class="text-md font-semibold text-gray-900 uppercase">Интернет магазин</h4>
           <div class="mt-3 grid space-y-3 text-sm">
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="/catalog">Каталог</NuxtLink></p>
           </div>
         </div>
         <div>
           <h4 class="text-md font-semibold text-gray-900 uppercase">Компания</h4>
           <div class="mt-3 grid space-y-3 text-sm">
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="/company">О компании</NuxtLink></p>
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="/company">Лицензии</NuxtLink></p>
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="/company">Реквизиты</NuxtLink></p>
           </div>
         </div>
@@ -26,18 +26,18 @@
         <div>
           <h4 class="text-md font-semibold text-gray-900 uppercase">Помощь</h4>
           <div class="mt-3 grid space-y-3 text-sm">
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="/help/delivery">Условия доставки</NuxtLink></p>
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="/help/delivery">Условия сотрудничества</NuxtLink></p>
           </div>
         </div>
         <div>
           <h4 class="text-md font-semibold text-gray-900 uppercase">Контакты</h4>
           <div class="mt-3 grid space-y-3 text-sm">
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="#">+7(495)129-33-41</NuxtLink></p>
-            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-hidden focus:text-gray-800"
+            <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
                 to="#">sales@plush.team</NuxtLink></p>
           </div>
         </div>

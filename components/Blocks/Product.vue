@@ -71,16 +71,16 @@
                     Войдите, чтобы увидеть цену
                   </NuxtLink>
                 </template>
-                <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
+                <h3 class="text-xl font-semibold text-black">{{ tab.name }}</h3>
                 <p class="mt-3 text-gray-500">{{ tab.description }}</p>
               </div>
               <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
                 <NuxtLink :to="`/catalog/${tab.id}`"
-                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-black shadow-2xs hover:bg-gray-50">
                   Подробнее
                 </NuxtLink>
                 <button @click="addToCart(tab)"
-                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-black shadow-2xs hover:bg-gray-50">
                   В корзину
                 </button>
               </div>
@@ -114,16 +114,16 @@
                     Войдите, чтобы увидеть цену
                   </NuxtLink>
                 </template>
-                <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
+                <h3 class="text-xl font-semibold text-black">{{ tab.name }}</h3>
                 <p class="mt-3 text-gray-500">{{ tab.description }}</p>
               </div>
               <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
                 <NuxtLink :to="`/catalog/${tab.id}`"
-                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-black shadow-2xs hover:bg-gray-50">
                   Подробнее
                 </NuxtLink>
                 <button @click="addToCart(tab)"
-                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-black shadow-2xs hover:bg-gray-50">
                   В корзину
                 </button>
               </div>
@@ -156,16 +156,16 @@
                     Войдите, чтобы увидеть цену
                   </NuxtLink>
                 </template>
-                <h3 class="text-xl font-semibold text-gray-800">{{ tab.name }}</h3>
+                <h3 class="text-xl font-semibold text-black">{{ tab.name }}</h3>
                 <p class="mt-3 text-gray-500">{{ tab.description }}</p>
               </div>
               <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200">
                 <NuxtLink :to="`/catalog/${tab.id}`"
-                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-black shadow-2xs hover:bg-gray-50">
                   Подробнее
                 </NuxtLink>
                 <button @click="addToCart(tab)"
-                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50">
+                  class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-black shadow-2xs hover:bg-gray-50">
                   В корзину
                 </button>
               </div>

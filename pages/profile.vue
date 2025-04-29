@@ -11,7 +11,7 @@
               <SkeletonLoader />
             </div>
             <div v-else>
-              <label class="block text-sm font-medium text-gray-800">ФИО</label>
+              <label class="block text-sm font-medium text-black">ФИО</label>
               <input type="text" v-model="profile.name" placeholder="Фамилия"
                 class="mt-1 w-full border rounded-md px-3 border-teal-200 py-2 focus:outline-none focus:border-teal-300" />
             </div>
@@ -19,7 +19,7 @@
               <SkeletonLoader />
             </div>
             <div v-else>
-              <label class="block text-sm font-medium text-gray-800 invisible">span</label>
+              <label class="block text-sm font-medium text-black invisible">span</label>
               <input type="text" v-model="profile.surname" placeholder="Имя"
                 class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
             </div>
@@ -27,7 +27,7 @@
               <SkeletonLoader />
             </div>
             <div v-else>
-              <label class="block text-sm font-medium text-gray-800 invisible">span</label>
+              <label class="block text-sm font-medium text-black invisible">span</label>
               <input type="text" v-model="profile.patronymic" placeholder="Отчество"
                 class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
             </div>
@@ -37,7 +37,7 @@
             <SkeletonLoader />
           </div>
           <div v-else>
-            <label class="block text-sm font-medium text-gray-800">Электронная почта</label>
+            <label class="block text-sm font-medium text-black">Электронная почта</label>
             <input type="email" v-model="profile.email" placeholder="work@levatoys.ru"
               class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
           </div>
@@ -46,7 +46,7 @@
             <SkeletonLoader />
           </div>
           <div v-else>
-            <label class="block text-sm font-medium text-gray-800">Пароль</label>
+            <label class="block text-sm font-medium text-black">Пароль</label>
             <input type="password" v-model="profile.password" placeholder="******"
               class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
           </div>
@@ -55,7 +55,7 @@
             <SkeletonLoader />
           </div>
           <div v-else>
-            <label class="block text-sm font-medium text-gray-800">ИНН</label>
+            <label class="block text-sm font-medium text-black">ИНН</label>
             <input type="text" v-model="profile.inn" placeholder="Введите свой ИНН"
               class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
           </div>
@@ -64,7 +64,7 @@
             <SkeletonLoader />
           </div>
           <div v-else>
-            <label class="block text-sm font-medium text-gray-800">Имя компании</label>
+            <label class="block text-sm font-medium text-black">Имя компании</label>
             <input type="text" v-model="profile.name_company" placeholder="Введите название своей компании"
               class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
           </div>

@@ -4,7 +4,7 @@
 
     <button id="hs-header-profile-dropdown" type="button" aria-haspopup="menu" aria-expanded="false"
       aria-label="Dropdown"
-      class="inline-flex items-center justify-center size-[36px] text-sm font-semibold leading-none rounded-full bg-white text-gray-800">
+      class="inline-flex items-center justify-center size-[36px] text-sm font-semibold leading-none rounded-full bg-white text-black">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
         class="lucide lucide-user-icon lucide-user">

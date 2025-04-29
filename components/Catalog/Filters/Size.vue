@@ -12,7 +12,7 @@
 				class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium transition-colors duration-200"
 				:class="{
 					'bg-teal-500 text-white': selectedSizes.includes(size.id),
-					'bg-gray-100 text-gray-800': !selectedSizes.includes(size.id),
+					'bg-gray-100 text-black': !selectedSizes.includes(size.id),
 				}"
 				@click="toggleSize(size.id)"
 			>

@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full flex items-center justify-between my-2">
-		<h3 class="text-xl md:text-lg font-semibold">Результаты</h3>
+		<h3 class="text-xl md:text-sm font-semibold">Результаты</h3>
 		<div class="flex flex-row gap-1">
 			<CatalogModalF />
 			<div class="hs-dropdown relative [--gpu-acceleration:false] inline-flex" id="dropdown">
@@ -21,7 +21,7 @@
 					<div class="p-1 space-y-0.5">
 						<button type="button" :class="[
 							'flex items-center w-full justify-between gap-x-3.5 py-2 px-3 rounded-lg text-sm transition-colors duration-200 cursor-pointer',
-							activeSort === 'data_desc' ? 'bg-teal-500 text-gray-100' : 'text-gray-800 hover:bg-gray-100 focus:bg-gray-100'
+							activeSort === 'data_desc' ? 'bg-teal-500 text-gray-100' : 'text-black hover:bg-gray-100 focus:bg-gray-100'
 						]" @click="handleSort('data_desc')">
 							Сначала новые
 							<svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -35,7 +35,7 @@
 						</button>
 						<button type="button" :class="[
 							'flex items-center w-full justify-between gap-x-3.5 py-2 px-3 rounded-lg text-sm transition-colors duration-200 cursor-pointer',
-							activeSort === 'data_asc' ? 'bg-teal-500 text-gray-100' : 'text-gray-800 hover:bg-gray-100 focus:bg-gray-100'
+							activeSort === 'data_asc' ? 'bg-teal-500 text-gray-100' : 'text-black hover:bg-gray-100 focus:bg-gray-100'
 						]" @click="handleSort('data_asc')">
 							Сначала старые
 							<svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -49,7 +49,7 @@
 						</button>
 						<button type="button" :class="[
 							'flex items-center w-full justify-between gap-x-3.5 py-2 px-3 rounded-lg text-sm transition-colors duration-200 cursor-pointer',
-							activeSort === 'price_desc' ? 'bg-teal-500 text-gray-100' : 'text-gray-800 hover:bg-gray-100 focus:bg-gray-100'
+							activeSort === 'price_desc' ? 'bg-teal-500 text-gray-100' : 'text-black hover:bg-gray-100 focus:bg-gray-100'
 						]" @click="handleSort('price_desc')">
 							Сначала дорогие
 							<svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -64,7 +64,7 @@
 						</button>
 						<button type="button" :class="[
 							'flex items-center w-full justify-between gap-x-3.5 py-2 px-3 rounded-lg text-sm transition-colors duration-200 cursor-pointer',
-							activeSort === 'price_asc' ? 'bg-teal-500 text-gray-100' : 'text-gray-800 hover:bg-gray-100 focus:bg-gray-100'
+							activeSort === 'price_asc' ? 'bg-teal-500 text-gray-100' : 'text-black hover:bg-gray-100 focus:bg-gray-100'
 						]" @click="handleSort('price_asc')">
 							Сначала дешёвые
 							<svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"

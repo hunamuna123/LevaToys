@@ -14,7 +14,7 @@ const switchTab = (tabId) => {
 		<div class="grid md:grid-cols-6">
 			<div class="md:col-span-1 ">
 				<div class="">
-					<h2 class="text-2xl font-bold  ">{{ pageTitle }}</h2>
+					<h2 class="text-2xl font-bold   ">{{ pageTitle }}</h2>
 					<div class="flex py-6">
 						<div>
 							<nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist"

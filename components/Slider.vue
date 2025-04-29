@@ -11,10 +11,10 @@
       }' id="carousel" class="relative">
             <div class="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-lg">
                 <div
-                    class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+                    class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-all duration-700 opacity-0">
                     <div v-for="(item, index) in banner" :key="index" class="hs-carousel-slide">
                         <div class="flex justify-center h-full bg-teal-100 p-6">
-                            <span class="self-center text-4xl text-gray-800 transition duration-700">
+                            <span class="self-center text-4xl text-black transition duration-700">
                                 {{ item.name }}
                             </span>
                         </div>
@@ -23,7 +23,7 @@
             </div>
 
             <button type="button"
-                class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-teal-800/10 focus:outline-hidden focus:bg-teal-800/10 rounded-s-lg">
+                class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-11.5 h-full text-black hover:bg-teal-800/10 focus:outline-hidden focus:bg-teal-800/10 rounded-s-lg">
                 <span class="text-2xl" aria-hidden="true">
                     <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -35,7 +35,7 @@
             </button>
 
             <button type="button"
-                class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-teal-800/10 focus:outline-hidden focus:bg-teal-800/10 rounded-e-lg">
+                class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-11.5 h-full text-black hover:bg-teal-800/10 focus:outline-hidden focus:bg-teal-800/10 rounded-e-lg">
                 <span class="sr-only">Next</span>
                 <span class="text-2xl" aria-hidden="true">
                     <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
