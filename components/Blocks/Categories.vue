@@ -10,11 +10,11 @@
       <SkeletonCategories v-if="loading" />
       <template v-else>
         <div v-for="category in categories" :key="category.id"
-          class="card bg-teal-400 shadow-2xl p-6 border-teal-300 border rounded-xl relative flex flex-col">
-          <div class="relative w-full h-48 rounded-xl overflow-hidden">
-            <img :src="category.thumbnail" :alt="category.name" class="w-full h-full object-cover" />
+          class="card bg-teal-400 shadow-2xl  border-teal-300 border rounded-xl relative flex flex-col">
+          <div class="relative w-full h-100 rounded-xl overflow-hidden">
+            <img :src="formattedImageUrl(category.thumbnail)" :alt="category.name" class="w-full h-full object-cover" />
           </div>
-          <div class="absolute top-0 left-4 p-2 rounded-xl text-white text-xl font-bold backdrop-blur-xl">
+          <div class="absolute top-1 left-4 p-2 rounded-xl text-black text-xl font-bold backdrop-blur-xl">
             {{ category.name }}
           </div>
           <div class="absolute bottom-4 right-4">
@@ -43,6 +43,11 @@ const url = computed(() => apiStore.url)
 const loading = ref(true)
 const categories = ref([])
 const error = ref(null)
+
+const formattedImageUrl = (thumbnail) => {
+  if (!thumbnail) return '/toy.png'
+  return thumbnail.startsWith('http') ? thumbnail : `http://${thumbnail}`
+}
 
 const fetchCategories = async () => {
   try {

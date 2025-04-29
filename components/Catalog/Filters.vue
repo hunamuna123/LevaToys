@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-6 lg:border-r w-full lg:w-1/3 lg:max-w-sm lg:border-gray-200 p-4">
     <h2 class="text-lg font-semibold max-lg:hidden">Фильтры</h2>
-    <hr class="max-lg:hidden" />
+    <hr class="max-lg:hidden text-gray-300" />
     <div class="flex flex-col gap-6 h-full overflow-y-scroll [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent">
       <CatalogFiltersSearch/>
       <CatalogFiltersPrice />
