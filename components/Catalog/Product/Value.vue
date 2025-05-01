@@ -114,14 +114,21 @@ const toasts = ref([])
 
 const addToCart = (product) => {
   const existingCart = JSON.parse(localStorage.getItem('busket') || '[]')
-  existingCart.push(product)
-  localStorage.setItem('busket', JSON.stringify(existingCart))
+  
+  // Проверяем, есть ли уже такой товар в корзине
+  const isDuplicate = existingCart.some(item => item.id === product.id)
+  
+  if (!isDuplicate) {
+    // Добавляем товар только если его еще нет в корзине
+    existingCart.push({...product, quantity: 1})
+    localStorage.setItem('busket', JSON.stringify(existingCart))
 
-  const toastId = Date.now()
-  toasts.value.push({ id: toastId })
-  setTimeout(() => {
-    toasts.value = toasts.value.filter(t => t.id !== toastId)
-  }, 3000)
+    const toastId = Date.now()
+    toasts.value.push({ id: toastId })
+    setTimeout(() => {
+      toasts.value = toasts.value.filter(t => t.id !== toastId)
+    }, 3000)
+  }
 }
 </script>
 

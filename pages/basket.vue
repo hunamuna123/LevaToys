@@ -35,6 +35,12 @@
                                     <div class="flex gap-2 mt-2 md:mt-0">
                                         <button @click="removeItem(item)"
                                             class="text-gray-400 hover:text-red-500 transition-colors duration-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M18 6L6 18M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                        <button @click="removeItem(item)"
+                                            class="text-gray-400 hover:text-red-500 transition-colors duration-200">
                                             <span class="i-heroicons-trash"></span>
                                         </button>
                                     </div>
@@ -208,7 +214,7 @@ function loadCart(): void {
                         sizes: item.sizes,
                         colors: item.colors,
                         images: item.images,
-                        quantity: Math.max(1, Math.min(item.quantity || 1, item.count_stok || 99))
+                        quantity: Math.max(1, Math.min(item.quantity || 1, item.count_stok || 9999))
                     }))
             } else {
                 cartItems.value = []
@@ -228,7 +234,7 @@ function saveCart(): void {
 
 // Обновление количества
 function updateQuantity(item: CartItem, newQuantity: number): void {
-    const quantity = Math.max(1, Math.min(newQuantity, item.count_stok || 99))
+    const quantity = Math.max(1, Math.min(newQuantity, item.count_stok || 9999))
     item.quantity = quantity
     saveCart()
 }
@@ -254,8 +260,8 @@ function validateQuantityOnBlur(event: Event, item: CartItem): void {
 
     if (isNaN(quantity) || quantity < 1) {
         quantity = 1
-    } else if (quantity > (item.count_stok || 99)) {
-        quantity = item.count_stok || 99
+    } else if (quantity > (item.count_stok || 9999)) {
+        quantity = item.count_stok || 9999
     }
 
     input.value = quantity.toString()
