@@ -36,9 +36,9 @@
           <h4 class="text-md font-semibold text-gray-900 uppercase">Контакты</h4>
           <div class="mt-3 grid space-y-3 text-sm">
             <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
-                to="#">+7(495)129-33-41</NuxtLink></p>
+                to="#">+7-------</NuxtLink></p>
             <p><NuxtLink class="inline-flex gap-x-2 text-gray-600 hover:text-black focus:outline-hidden focus:text-black"
-                to="#">sales@plush.team</NuxtLink></p>
+                to="#">mail@---</NuxtLink></p>
           </div>
         </div>
 
@@ -48,7 +48,7 @@
     <div class="pt-5 mt-5 border-t border-gray-200">
       <div class="sm:flex sm:justify-between sm:items-center">
         <div class="flex flex-wrap items-center gap-3">
-          <p class="text-gray-400 text-sm">© 2025 Оптовый интернет-магазин мягких игрушек «Plush.team»</p>
+          <p class="text-gray-400 text-sm">© 2025 Оптовый интернет-магазин мягких игрушек LevaToys</p>
         </div>
         <div class="flex gap-3 text-sm text-gray-400">
           <p>

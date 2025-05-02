@@ -80,7 +80,7 @@ const switchTab = (tabId) => {
 
 									<div class="grow">
 										<h3 class="md:text-lg font-semibold text-black">
-											Plush.team – оптовый интернет-магазин мягкой игрушки.
+											LevaToys – оптовый интернет-магазин мягкой игрушки.
 										</h3>
 										<p class="mt-1 text-gray-500">
 											- Вы устали искать нужную вам мягкую игрушку по поставщикам? <br>
@@ -152,39 +152,35 @@ const switchTab = (tabId) => {
 								<tbody>
 									<tr class="border-b border-gray-300">
 										<th class="py-4  font-medium w-1/2">Полное наименование:</th>
-										<td class="py-4 "> Общество с ограниченной ответственностью «Плюш Тим»</td>
+										<td class="py-4 "> --------------------</td>
 									</tr>
 									<tr class="border-b border-gray-300">
 										<th class="py-4  font-medium">Сокращенное наименование:</th>
-										<td class="py-4 "> ООО «Плюш Тим»</td>
+										<td class="py-4 "> --------------------</td>
 									</tr>
 									<tr class="border-b border-gray-300">
 										<th class="py-4  font-medium">ИНН/КПП:</th>
-										<td class="py-4 "> 5027336511/502701001</td>
+										<td class="py-4 "> --------------------</td>
 									</tr>
 									<tr class="border-b border-gray-300">
 										<th class="py-4  font-medium">Юридический адрес:</th>
-										<td class="py-4 "> 140002, Московская область, г.о. Люберцы, г. Люберцы, ул.
-											Колхозная, д. 8А , помещ. 24</td>
+										<td class="py-4 "> ------------------------------------------------------------</td>
 									</tr>
 									<tr class="border-b border-gray-300">
 										<th class="py-4  font-medium">Фактический адрес:</th>
-										<td class="py-4 "> 140002, Московская область, г.о. Люберцы, г. Люберцы, ул.
-											Колхозная, д. 8А , помещ. 24</td>
+										<td class="py-4 "> ------------------------------------------------------------</td>
 									</tr>
 									<tr class="border-b border-gray-300">
 										<th class="py-4  font-medium">Телефон:</th>
-										<td class="py-4 "> +7(495)129-33-41</td>
+										<td class="py-4 "> --------------------</td>
 									</tr>
 									<tr class="border-b border-gray-300 ">
 										<th class="py-4  font-medium">Электронная почта:</th>
-										<td class="py-4 ">sales@plush.team</td>
+										<td class="py-4 ">--------------------</td>
 									</tr>
 									<tr class="border-b border-gray-300">
 										<th class="py-4  font-medium">Банковские реквизиты:</th>
-										<td class="py-4 "> БИК 044030653
-											Р/с №40702810255710003733 СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК
-											Кор/счет 30101810500000000653</td>
+										<td class="py-4 "> --------------------</td>
 									</tr>
 								</tbody>
 							</table>
