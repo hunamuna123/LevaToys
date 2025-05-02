@@ -38,12 +38,6 @@
 				</span>
 			</h4>
 			<h4 class="text-md text-gray-500">
-				Количество на складе:
-				<span class="font-medium text-black">
-					{{ product?.count_stok || 'Товаров не осталось' }}
-				</span>
-			</h4>
-			<h4 class="text-md text-gray-500">
 				Категория:
 				<span class="font-medium text-black">
 					{{ product?.category?.name || 'Нет категории' }}

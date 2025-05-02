@@ -29,7 +29,16 @@ const switchTab = (tabId) => {
 									role="tab">
 									Контакты
 								</button>
-
+					
+								<button type="button"
+									class="hs-tab-active:bg-teal-100 text-left hs-tab-active:text-teal-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
+									:class="{ 'bg-teal-100 text-teal-600': activeTab === 'vertical-tab-with-border-2' }"
+									id="vertical-tab-with-border-item-2"
+									@click="switchTab('vertical-tab-with-border-2')" aria-selected="false"
+									data-hs-tab="#vertical-tab-with-border-2" aria-controls="vertical-tab-with-border-2"
+									role="tab">
+									Бот
+								</button>
 
 							</nav>
 						</div>
@@ -72,6 +81,15 @@ const switchTab = (tabId) => {
 								</div>
 							</div>
 						</div>
+					</div>
+					<div id="vertical-tab-with-border-2" role="tabpanel"
+						aria-labelledby="vertical-tab-with-border-item-2"
+						v-show="activeTab === 'vertical-tab-with-border-2'">
+						<h3 class="text-xl">Бот</h3>
+						<p class="text-gray-500 my-2">
+
+							Текст о боте 
+						</p>
 					</div>
 				</div>
 			</div>

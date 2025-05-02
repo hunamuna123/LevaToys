@@ -16,7 +16,6 @@
           Подробнее
         </button>
       </div>  
-      <!-- Иллюстрация -->
       <div class="lg:w-1/2 mt-6 lg:mt-0 hidden lg:flex justify-end ">
         <img
           src="/toy.png"
