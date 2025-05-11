@@ -8,5 +8,10 @@
     <BlocksProduct/>
     <BlocksNews/>
     <Footer/>
+    <CookieConsent />
   </div>
-</template>
+</template>=
+
+<script setup>
+import CookieConsent from '~/components/UI/CookieConsent.vue'
+</script>
