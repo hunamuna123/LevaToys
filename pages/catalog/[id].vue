@@ -2,7 +2,7 @@
 	<NuxtLayout>
 		<div class="-mt-4 lg:-mt-8 w-full flex flex-col gap-10">
 			<div class="w-full flex flex-col md:flex-row gap-12">
-				<CatalogProductCarousel v-if="!isLoading" />
+				<CatalogProductCarousel v-if="!isLoading" :product="productData" />
 				<CatalogProductSkeleton v-if="isLoading" />
 				<CatalogProductValue v-else :product="productData" />
 			</div>
