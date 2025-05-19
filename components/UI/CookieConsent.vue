@@ -86,10 +86,10 @@
               Наш сайт использует файлы куки.
             </h2>
             <p class="mt-2 text-sm text-gray-600">
-              Нажимая «Разрешить все», вы соглашаетесь на использование всех файлов cookie. Посетите нашу  <a
+              Нажимая «Разрешить все», вы соглашаетесь на использование всех файлов cookie. Посетите нашу  <NuxtLink
                 class="inline-flex items-center gap-x-1.5 text-teal-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium"
-                href="#"> Политику
-              использования файлов cookie</a> чтобы узнать больше.
+                to="/license"> Политику
+              использования файлов cookie</NuxtLink> чтобы узнать больше.
             </p>
             <div class="mt-5 inline-flex gap-x-2">
               <button @click="acceptAll" type="button"

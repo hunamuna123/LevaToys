@@ -72,12 +72,40 @@
 				</template>
 			</div>
 			<div>
-				<button @click="addToCart(product)"
-					type="button"
-					class="py-3 px-6 inline-flex items-center font-medium text-sm rounded-full bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700 transition-colors duration-200"
-				>
-					Добавить в корзину
-				</button>
+				<div class="flex items-center gap-4">
+					<div class="flex items-center gap-2">
+						<button @click="quantity > 1 && quantity--"
+							type="button"
+							class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none transition-all duration-200"
+							:disabled="quantity <= 1"
+							tabindex="-1" aria-label="Уменьшить">
+							<svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M5 12h14"></path>
+							</svg>
+						</button>
+						<input type="text" v-model="quantity"
+							@input="handleQuantityInput"
+							@blur="validateQuantityOnBlur"
+							class="w-12 bg-transparent border border-gray-200 rounded-lg focus:outline-none text-gray-800 text-center p-1"
+							aria-label="Количество">
+						<button @click="quantity < (product?.count_stok || 99) && quantity++"
+							type="button"
+							class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none transition-all duration-200"
+							:disabled="quantity >= (product?.count_stok || 99)"
+							tabindex="-1" aria-label="Увеличить">
+							<svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M5 12h14"></path>
+								<path d="M12 5v14"></path>
+							</svg>
+						</button>
+					</div>
+					<button @click="addToCart(product)"
+						type="button"
+						class="py-3 px-6 inline-flex items-center font-medium text-sm rounded-full bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700 transition-colors duration-200"
+					>
+						Добавить в корзину
+					</button>
+				</div>
 			</div>
 		</div>
 
@@ -105,24 +133,56 @@ defineProps({
 })
 
 const toasts = ref([])
+const quantity = ref(1)
+
+const handleQuantityInput = (event) => {
+	const input = event.target
+	const value = input.value.replace(/[^0-9]/g, '')
+	input.value = value
+
+	if (value) {
+		const newQuantity = parseInt(value)
+		if (!isNaN(newQuantity)) {
+			quantity.value = Math.max(1, Math.min(newQuantity, props.product?.count_stok || 99))
+		}
+	}
+}
+
+const validateQuantityOnBlur = (event) => {
+	const input = event.target
+	let newQuantity = parseInt(input.value)
+
+	if (isNaN(newQuantity) || newQuantity < 1) {
+		newQuantity = 1
+	} else if (newQuantity > (props.product?.count_stok || 99)) {
+		newQuantity = props.product?.count_stok || 99
+	}
+
+	input.value = newQuantity.toString()
+	quantity.value = newQuantity
+}
 
 const addToCart = (product) => {
   const existingCart = JSON.parse(localStorage.getItem('busket') || '[]')
   
   // Проверяем, есть ли уже такой товар в корзине
-  const isDuplicate = existingCart.some(item => item.id === product.id)
+  const existingItemIndex = existingCart.findIndex(item => item.id === product.id)
   
-  if (!isDuplicate) {
-    // Добавляем товар только если его еще нет в корзине
-    existingCart.push({...product, quantity: 1})
-    localStorage.setItem('busket', JSON.stringify(existingCart))
-
-    const toastId = Date.now()
-    toasts.value.push({ id: toastId })
-    setTimeout(() => {
-      toasts.value = toasts.value.filter(t => t.id !== toastId)
-    }, 3000)
+  if (existingItemIndex === -1) {
+    // Добавляем новый товар
+    existingCart.push({...product, quantity: quantity.value})
+  } else {
+    // Обновляем количество существующего товара
+    existingCart[existingItemIndex].quantity += quantity.value
   }
+  
+  localStorage.setItem('busket', JSON.stringify(existingCart))
+
+  const toastId = Date.now()
+  toasts.value.push({ id: toastId })
+  setTimeout(() => {
+    toasts.value = toasts.value.filter(t => t.id !== toastId)
+  }, 3000)
 }
 </script>
 

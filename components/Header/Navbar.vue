@@ -107,7 +107,8 @@
                       <div class="py-1 md:p-2 md:grid md:grid-cols-2 lg:grid-cols-3 gap-2">
                         <div class="flex flex-col">
                           <!-- Link -->
-                          <NuxtLink to="/catalog" class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
+                          <NuxtLink to="/catalog"
+                            class="p-3 flex gap-x-4 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
 
                             <div class="grow">
                               <p class="font-medium text-sm text-black">Все категории</p>
@@ -116,7 +117,8 @@
                         </div>
                         <div v-for="category in categories" :key="category.id" class="flex flex-col">
                           <!-- Link -->
-                          <NuxtLink :to="`/catalog/?category_id=${category.id}`" class="p-3 flex gap-x-2 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
+                          <NuxtLink :to="`/catalog/?category_id=${category.id}`"
+                            class="p-3 flex gap-x-2 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 rounded-lg">
 
                             <div class="grow">
                               <p class="font-medium text-sm text-black">{{ category.name }}</p>
@@ -136,7 +138,26 @@
             <div class="my-2 md:my-0 md:mx-2">
               <div class="w-full h-px md:w-px md:h-4 bg-gray-100 md:bg-gray-300"></div>
             </div>
-
+            <div class="rounded-full border">
+             <NuxtLink to="/basket">
+              <button type="button" aria-haspopup="menu" aria-expanded="false"
+                class="inline-flex items-center justify-center size-[36px] text-sm font-semibold leading-none rounded-full bg-white text-black">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shopping-basket-icon lucide-shopping-basket">
+                  <path d="m15 11-1 9" />
+                  <path d="m19 11-4-7" />
+                  <path d="M2 11h20" />
+                  <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4" />
+                  <path d="M4.5 15.5h15" />
+                  <path d="m5 11 4-7" />
+                  <path d="m9 11 1 9" />
+                </svg>
+             
+              </button>
+                 </NuxtLink>
+            </div>
             <div class=" flex flex-wrap items-center gap-x-1.5">
               <HeaderNavprofile v-if="accessToken" />
               <NuxtLink v-else to="/auth/register"
@@ -150,6 +171,8 @@
                 </svg><span class="px-1">Войти</span>
               </NuxtLink>
             </div>
+
+
           </div>
         </div>
       </div>

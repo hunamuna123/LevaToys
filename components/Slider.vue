@@ -12,19 +12,27 @@
                 <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0 cursor-grab hs-carousel-dragging:transition-none hs-carousel-dragging:cursor-grabbing">
                     <div v-for="(item, index) in banner" :key="index" class="hs-carousel-slide w-full">
                         <div class="grid md:grid-cols-2 gap-4 h-96 bg-gray-100">
-                            <div class="flex flex-col justify-center h-full gap-6 p-8">
-                                <h2 class="text-3xl font-bold lg:text-5xl">
+                            <div class="flex flex-col justify-center h-full gap-6 p-4 md:p-8">
+                                <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold">
                                     {{ item.name }}
                                 </h2>
-                                <p class="text-lg text-gray-800 break-words line-clamp-5">
+                                <p class="text-base md:text-lg text-gray-800 break-words line-clamp-3 md:line-clamp-5">
                                     {{ item.description }}
                                 </p>
                             </div>
                             <figure class="relative w-full h-full">
                                 <img v-if="item.image"
-                                    class="hidden md:block w-full h-full object-cover rounded-xl"
-                                    :src="`http://${item.image}`" 
-                                    alt="Изображение баннера" />
+                                    class="w-full h-full object-contain md:object-cover rounded-xl"
+                                    :src="getImageUrl(item.image)" 
+                                    :alt="item.name || 'Изображение баннера'"
+                                    @error="handleImageError" />
+                                <div v-else class="flex flex-col items-center justify-center h-full bg-gray-100 rounded-xl p-4 md:p-8 text-center">
+                                    <svg class="w-8 h-8 md:w-12 md:h-12 text-gray-400 mb-2 md:mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <h3 class="text-base md:text-lg font-semibold text-gray-700 mb-1">Нет изображения</h3>
+                                    <p class="text-xs md:text-sm text-gray-500">Для этого баннера пока нет фотографии</p>
+                                </div>
                             </figure>
                         </div>
                     </div>
@@ -54,9 +62,29 @@ export default {
 
     mounted() {
         this.getNews()
+        document.addEventListener('touchstart', this.handleTouchStart, { passive: false })
+    },
+
+    beforeUnmount() {
+        document.removeEventListener('touchstart', this.handleTouchStart)
     },
 
     methods: {
+        handleTouchStart(e) {
+            if (e.target.closest('.hs-carousel')) {
+                e.preventDefault()
+            }
+        },
+
+        getImageUrl(imageUrl) {
+            if (!imageUrl) return '/toy.png'
+            return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+        },
+
+        handleImageError(event) {
+            event.target.src = '/toy.png'
+        },
+
         async getNews() {
             this.isLoading = true
             try {
@@ -71,19 +99,38 @@ export default {
             } finally {
                 this.isLoading = false
                 this.$nextTick(() => {
-                    const carouselElement = document.getElementById('carousel')
-
                     window.HSStaticMethods.autoInit()
-
-                    if (carouselElement) {
-                        window.HSCarousel = new HSCarousel(carouselElement)
-                        window.HSCarousel.init()
-                    } else {
-                        console.error('Carousel element not found')
-                    }
                 })
             }
         },
     },
 }
 </script>
+
+<style scoped>
+.hs-carousel {
+    touch-action: pan-y pinch-zoom;
+}
+
+.hs-carousel-body {
+    touch-action: pan-y pinch-zoom;
+}
+
+@media (max-width: 768px) {
+    .hs-carousel-slide {
+        min-height: 100%;
+    }
+    
+    .hs-carousel-slide img {
+        display: block !important;
+        max-height: 200px;
+        margin: 0 auto;
+    }
+
+    .hs-carousel-slide figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+</style>

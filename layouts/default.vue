@@ -5,10 +5,12 @@
       <slot/>
     </main>
     <Footer />
+    <PwaInstall />
   </div>
 </template>
 
 <script setup>
+import PwaInstall from '~/components/PwaInstall.vue'
 let route = useRoute()
 
 let pageTitle = computed(() => route.meta.title || '')
