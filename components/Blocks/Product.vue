@@ -179,9 +179,11 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { api } from "@/store/api.js"
-import { isAuthenticated, getAuthHeaders } from '@/utils/auth';
+import { isAuthenticated, getAuthHeaders } from '@/utils/auth'
+import { useCartStore } from '@/store/cart'
 
 const apiStore = api()
+const cartStore = useCartStore()
 const url = computed(() => apiStore.url)
 const tab1 = ref([]);
 const tab2 = ref([]);
@@ -256,23 +258,17 @@ const fetchProducts = async () => {
   }
 };
 
-
-const addToCart = (product) => {
-  const existingCart = JSON.parse(localStorage.getItem('busket') || '[]')
-  
-  // Проверяем, есть ли уже такой товар в корзине
-  const isDuplicate = existingCart.some(item => item.id === product.id)
-  
-  if (!isDuplicate) {
-    // Добавляем товар только если его еще нет в корзине
-    existingCart.push({...product, quantity: 1})
-    localStorage.setItem('busket', JSON.stringify(existingCart))
-
+const addToCart = async (product) => {
+  try {
+    await cartStore.addToCart(product, 1, false)
+    
     const toastId = Date.now()
     toasts.value.push({ id: toastId })
     setTimeout(() => {
       toasts.value = toasts.value.filter(t => t.id !== toastId)
     }, 3000)
+  } catch (error) {
+    console.error('Error adding to cart:', error)
   }
 }
 

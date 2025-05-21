@@ -2,7 +2,7 @@
     <div class="flex flex-col lg:flex-row items-center justify-between bg-white px-4 py-10 sm:px-4 lg:px-8 rounded-lg ">
       <div class="lg:w-1/2 space-y-4">
         <h2 class="text-2xl font-semibold">
-          LevaToys – оптовый интернет-магазин мягкой игрушки
+          Лёва – оптовый интернет-магазин мягкой игрушки
         </h2>
         <ul class="text-gray-700 space-y-2 list-disc list-inside">
           <li>Вы устали искать нужную вам мягкую игрушку по поставщикам?</li>

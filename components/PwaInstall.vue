@@ -4,7 +4,7 @@
       <div class="flex items-center space-x-3">
         <img src="/icons/icon-192x192.png" alt="App Icon" class="w-12 h-12">
         <div>
-          <h3 class="font-semibold">Установить LevaToys</h3>
+          <h3 class="font-semibold">Установить Лёва</h3>
           <p class="text-sm text-gray-600">Добавьте приложение на главный экран для быстрого доступа</p>
         </div>
       </div>

@@ -80,7 +80,7 @@ const switchTab = (tabId) => {
 
 									<div class="grow">
 										<h3 class="md:text-lg font-semibold text-black">
-											LevaToys – оптовый интернет-магазин мягкой игрушки.
+											Лёва – оптовый интернет-магазин мягкой игрушки.
 										</h3>
 										<p class="mt-1 text-gray-500">
 											- Вы устали искать нужную вам мягкую игрушку по поставщикам? <br>

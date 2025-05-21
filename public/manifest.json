@@ -1,7 +1,7 @@
 {
-  "name": "LevaToys",
-  "short_name": "LevaToys",
-  "description": "LevaToys - Toy Store",
+  "name": "Лёва",
+  "short_name": "Лёва",
+  "description": "Лёва - Toy Store",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",

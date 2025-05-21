@@ -48,7 +48,7 @@
     <div class="pt-5 mt-5 border-t border-gray-200">
       <div class="sm:flex sm:justify-between sm:items-center">
         <div class="flex flex-wrap items-center gap-3">
-          <p class="text-gray-400 text-sm">© 2025 Оптовый интернет-магазин мягких игрушек LevaToys</p>
+          <p class="text-gray-400 text-sm">© 2025 Оптовый интернет-магазин мягких игрушек Лёва</p>
         </div>
         <div class="flex gap-3 text-sm text-gray-400">
           <p>

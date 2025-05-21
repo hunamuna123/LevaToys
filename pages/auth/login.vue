@@ -71,18 +71,28 @@ export default {
         };
     },
     mounted() {
-        let phoneInput = document.getElementById("phone-input");
-        if (phoneInput) {
-            IMask(phoneInput, {
-                mask: "+{7} (000) 000-00-00",
-            });
-        }
+        this.initPhoneMask();
     },
     setup() {
         let api = useApiStore();
         return { api };
     },
     methods: {
+        initPhoneMask() {
+            const phoneInput = document.getElementById("phone-input");
+            if (phoneInput) {
+                const mask = IMask(phoneInput, {
+                    mask: "+{7} (000) 000-00-00",
+                    lazy: false,
+                    prepare: (str) => str.replace(/\D/g, ''),
+                });
+                
+                // Sync v-model with mask
+                mask.on('accept', () => {
+                    this.phone = mask.value;
+                });
+            }
+        },
         async sendData() {
             let cleaned = this.phone.replace(/\D/g, "");
             if (cleaned.length !== 11) {

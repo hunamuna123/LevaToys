@@ -1,6 +1,7 @@
 <template>
   <div class="max-w-[90rem] mx-auto ">
     <HeaderNavbar/>
+    <div class="mt-30">
     <Slider/>
     <BlocksInfo/>
     <BlocksCategories/>
@@ -9,6 +10,8 @@
     <BlocksNews/>
     <Footer/>
     <CookieConsent />
+    </div>
+
   </div>
 </template>=
 

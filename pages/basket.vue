@@ -13,7 +13,7 @@
                             [&::-webkit-scrollbar]:w-2
                             [&::-webkit-scrollbar-track]:bg-gray-100
                             [&::-webkit-scrollbar-thumb]:bg-gray-300">
-                    <TransitionGroup name="list" tag="div" v-if="cartItems.length">
+                    <div v-if="cartItems.length">
                         <div v-for="item in cartItems" :key="item.id"
                             class="flex flex-col md:flex-row gap-4 p-4 border-b border-gray-200 hover:bg-gray-50 transition-colors duration-200">
                             <div class="w-full md:w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
@@ -39,15 +39,11 @@
                                                 <path d="M18 6L6 18M6 6l12 12" />
                                             </svg>
                                         </button>
-                                        <button @click="removeItem(item)"
-                                            class="text-gray-400 hover:text-red-500 transition-colors duration-200">
-                                            <span class="i-heroicons-trash"></span>
-                                        </button>
                                     </div>
                                 </div>
                                 <div class="flex flex-col md:flex-row justify-between items-center mt-4">
                                     <div
-                                        class="py-2 px-3 inline-block  rounded-lg hover:border-teal-500 transition-colors duration-200">
+                                        class="py-2 px-3 inline-block rounded-lg hover:border-teal-500 transition-colors duration-200">
                                         <div class="flex items-center gap-x-1.5">
                                             <button type="button" @click="updateQuantity(item, item.quantity - 1)"
                                                 :disabled="item.quantity <= 1"
@@ -63,7 +59,7 @@
                                             <input type="text" :value="item.quantity"
                                                 @input="(e) => handleQuantityInput(e, item)"
                                                 @blur="(e) => validateQuantityOnBlur(e, item)"
-                                                class="w-12 bg-transparent border border-gray-200 rounded-lg focus:outline-none text-gray-800 text-center  p-1"
+                                                class="w-12 bg-transparent border border-gray-200 rounded-lg focus:outline-none text-gray-800 text-center p-1"
                                                 aria-label="Количество">
                                             <button type="button" @click="updateQuantity(item, item.quantity + 1)"
                                                 :disabled="item.quantity >= (item.count_stok || 99)"
@@ -86,7 +82,7 @@
                                 </div>
                             </div>
                         </div>
-                    </TransitionGroup>
+                    </div>
                     <div v-else class="text-center py-16">
                         <div class="mb-4">
                             <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24"
@@ -171,6 +167,10 @@
 </template>
 
 <script setup lang="ts">
+import { useCartStore } from '@/store/cart'
+import { isAuthenticated, getAuthHeaders } from '@/utils/auth'
+import { api } from '@/store/api'
+
 interface CartItem {
     id: number
     name: string
@@ -208,70 +208,50 @@ definePageMeta({
     layout: 'catalog',
 })
 
-const cartItems = ref<CartItem[]>([])
-const totalItems = computed(() => cartItems.value.reduce((sum, item) => sum + item.quantity, 0))
-const totalSum = computed(() => cartItems.value.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0))
+const cartStore = useCartStore()
+const cartItems = computed(() => cartStore.items.map(item => ({
+    ...item.product,
+    quantity: item.quantity
+})))
+const totalItems = computed(() => cartStore.totalItems)
+const totalSum = computed(() => cartStore.totalSum)
 
 const modal = ref<HTMLElement | null>(null)
 
-onMounted(() => {
-    loadCart()
-    modal.value = document.getElementById('checkout-modal')
-})
+const apiStore = api()
+const url = computed(() => apiStore.url)
 
-// Загрузка данных из localStorage
-function loadCart(): void {
-    try {
-        const stored = localStorage.getItem('busket')
-        if (stored) {
-            const parsed = JSON.parse(stored)
-            if (Array.isArray(parsed)) {
-                cartItems.value = parsed
-                    .filter(item => item && typeof item === 'object' && item.id) // Проверяем что это валидный объект
-                    .map((item: Partial<CartItem>) => ({
-                        id: item.id || 0,
-                        name: item.name || 'Товар',
-                        description: item.description,
-                        product_code: item.product_code,
-                        article: item.article,
-                        rating: item.rating,
-                        in_stock: item.in_stock,
-                        count_stok: item.count_stok,
-                        price: item.price || 0,
-                        oldPrice: item.oldPrice,
-                        thumbnail: item.thumbnail,
-                        feedback_count: item.feedback_count,
-                        created: item.created,
-                        updated: item.updated,
-                        category: item.category,
-                        color: item.color,
-                        brand: item.brand,
-                        sizes: item.sizes,
-                        colors: item.colors,
-                        images: item.images,
-                        quantity: Math.max(1, Math.min(item.quantity || 1, item.count_stok || 9999))
-                    }))
-            } else {
-                cartItems.value = []
+onMounted(async () => {
+    await cartStore.fetchCart()
+    modal.value = document.getElementById('checkout-modal')
+
+    // Send localStorage cart items to backend if user is authenticated
+    if (isAuthenticated()) {
+        const storedCart = localStorage.getItem('busket')
+        if (storedCart) {
+            try {
+                const items = JSON.parse(storedCart)
+                // Send each item to backend
+                for (const item of items) {
+                    await cartStore.addToCart(item, item.quantity, false)
+                }
+                // Clear localStorage after successful sync
+                localStorage.removeItem('busket')
+            } catch (error) {
+                console.error('Error syncing cart with backend:', error)
             }
         }
-    } catch (error) {
-        console.error('Ошибка при загрузке корзины:', error)
-        cartItems.value = [] // В случае ошибки очищаем корзину
-        localStorage.removeItem('busket') // И очищаем localStorage
     }
-}
-
-// Сохранение в localStorage
-function saveCart(): void {
-    localStorage.setItem('busket', JSON.stringify(cartItems.value))
-}
+})
 
 // Обновление количества
-function updateQuantity(item: CartItem, newQuantity: number): void {
+async function updateQuantity(item: CartItem, newQuantity: number): Promise<void> {
     const quantity = Math.max(1, Math.min(newQuantity, item.count_stok || 9999))
-    item.quantity = quantity
-    saveCart()
+    try {
+        await cartStore.addToCart(item, quantity, true)
+    } catch (error) {
+        console.error('Error updating quantity:', error)
+    }
 }
 
 // Обработка ввода количества
@@ -304,18 +284,24 @@ function validateQuantityOnBlur(event: Event, item: CartItem): void {
 }
 
 // Удаление товара
-function removeItem(item: CartItem): void {
+async function removeItem(item: CartItem): Promise<void> {
     if (confirm(`Вы уверены, что хотите удалить "${item.name}" из корзины?`)) {
-        cartItems.value = cartItems.value.filter(i => i.id !== item.id)
-        saveCart()
+        try {
+            await cartStore.removeFromCart(item.id)
+        } catch (error) {
+            console.error('Error removing item:', error)
+        }
     }
 }
 
 // Очистка корзины
-function clearCart(): void {
+async function clearCart(): Promise<void> {
     if (confirm('Вы уверены, что хотите очистить корзину?')) {
-        cartItems.value = []
-        saveCart()
+        try {
+            await cartStore.clearCart()
+        } catch (error) {
+            console.error('Error clearing cart:', error)
+        }
     }
 }
 
@@ -331,17 +317,43 @@ function getNounPluralForm(number: number, forms: [string, string, string]): str
     return forms[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]]
 }
 
-function proceedToCheckout(): void {
-    if (modal.value) {
-        modal.value.classList.remove('hidden')
-        // Добавляем небольшую задержку для анимации
-        setTimeout(() => {
-            const modalContent = modal.value?.querySelector('.sm\\:max-w-lg')
-            if (modalContent) {
-                modalContent.classList.remove('translate-y-4', 'opacity-0')
-                modalContent.classList.add('translate-y-0', 'opacity-100')
-            }
-        }, 50)
+async function proceedToCheckout(): Promise<void> {
+    console.log('Button clicked')
+    console.log('Cart items:', cartItems.value)
+    
+    try {
+        const items = cartItems.value.map(item => ({
+            product_id: item.id,
+            quantity: item.quantity
+        }))
+
+        console.log('Sending request with data:', {
+            product_item: items
+        })
+
+        const response = await fetch(`${url.value}api/v1/bot/start/order`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'accept': 'application/json',
+                ...getAuthHeaders()
+            },
+            body: JSON.stringify({
+                product_item: items
+            })
+        })
+
+        console.log('Response received:', response)
+        const data = await response.json()
+        console.log('Response data:', data)
+        
+        if (data.message === 'OK' && data.data?.link) {
+            window.open(data.data.link, '_blank')
+        } else {
+            console.error('Error getting bot link:', data)
+        }
+    } catch (error) {
+        console.error('Error proceeding to checkout:', error)
     }
 }
 
@@ -372,39 +384,5 @@ const getImageUrl = (images: any[] | undefined) => {
 </script>
 
 <style scoped>
-.list-move,
-.list-enter-active,
-.list-leave-active {
-    transition: all 0.5s ease;
-}
-
-.list-enter-from,
-.list-leave-to {
-    opacity: 0;
-    transform: translateX(-30px);
-}
-
-.list-leave-active {
-    position: absolute;
-}
-
-button {
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-/* Анимации для модального окна */
-.hs-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity 0.3s ease-in-out;
-}
-
-.hs-overlay:not(.hidden) {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.sm\:max-w-lg {
-    transition: all 0.3s ease-in-out;
-}
+/* Удаляем старые стили анимации */
 </style>

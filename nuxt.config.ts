@@ -15,9 +15,9 @@ export default defineNuxtConfig({
   app: {
     loadingIndicator: true,
     head: {
-      title: 'LevaToys',
+      title: 'Лёва',
       meta: [
-        { name: 'description', content: 'LevaToys - Toy Store' },
+        { name: 'description', content: 'Лёва - Toy Store' },
         { name: 'theme-color', content: '#ffffff' }
       ],
       link: [

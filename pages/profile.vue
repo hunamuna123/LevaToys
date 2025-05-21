@@ -38,7 +38,7 @@
           </div>
           <div v-else>
             <label class="block text-sm font-medium text-black">Электронная почта</label>
-            <input type="email" v-model="profile.email" placeholder="work@levatoys.ru"
+            <input type="email" v-model="profile.email" placeholder="work@Лёва.ru"
               class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
           </div>
 

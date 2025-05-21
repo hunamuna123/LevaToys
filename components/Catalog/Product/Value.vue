@@ -124,14 +124,16 @@
 <script setup>
 import { ref } from 'vue'
 import { isAuthenticated } from '@/utils/auth'
+import { useCartStore } from '@/store/cart'
 
-defineProps({
+const props = defineProps({
 	product: {
 		type: Object,
 		default: () => ({})
 	}
 })
 
+const cartStore = useCartStore()
 const toasts = ref([])
 const quantity = ref(1)
 
@@ -162,27 +164,18 @@ const validateQuantityOnBlur = (event) => {
 	quantity.value = newQuantity
 }
 
-const addToCart = (product) => {
-  const existingCart = JSON.parse(localStorage.getItem('busket') || '[]')
-  
-  // Проверяем, есть ли уже такой товар в корзине
-  const existingItemIndex = existingCart.findIndex(item => item.id === product.id)
-  
-  if (existingItemIndex === -1) {
-    // Добавляем новый товар
-    existingCart.push({...product, quantity: quantity.value})
-  } else {
-    // Обновляем количество существующего товара
-    existingCart[existingItemIndex].quantity += quantity.value
-  }
-  
-  localStorage.setItem('busket', JSON.stringify(existingCart))
-
-  const toastId = Date.now()
-  toasts.value.push({ id: toastId })
-  setTimeout(() => {
-    toasts.value = toasts.value.filter(t => t.id !== toastId)
-  }, 3000)
+const addToCart = async (product) => {
+	try {
+		await cartStore.addToCart(product, quantity.value, false)
+		
+		const toastId = Date.now()
+		toasts.value.push({ id: toastId })
+		setTimeout(() => {
+			toasts.value = toasts.value.filter(t => t.id !== toastId)
+		}, 3000)
+	} catch (error) {
+		console.error('Error adding to cart:', error)
+	}
 }
 </script>
 

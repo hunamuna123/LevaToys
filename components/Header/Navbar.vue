@@ -1,7 +1,7 @@
 <template>
-  <nav class="bg-white">
+  <nav class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
     <div
-      class=" w-full mx-auto md:flex hidden md:flex-row sm:justify-between md:items-center md:gap-x-3 py-3 px-4 md:px-6 lg:px-8 ">
+      class="w-full mx-auto md:flex hidden md:flex-row sm:justify-between md:items-center md:gap-x-3 py-3 px-4 md:px-6 lg:px-8">
       <div id="hs-nav-secondary"
         class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
         <div class="py-2 sm:py-0 flex flex-col sm:flex-row sm:justify-start gap-y-2 sm:gap-y-0 sm:gap-x-6">
@@ -21,11 +21,11 @@
       </div>
     </div>
   </nav>
-  <header class="flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200">
-    <nav class="relative  w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
+  <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white/80 backdrop-blur-md fixed top-0 md:top-[41px] left-0 right-0 border-b border-gray-200">
+    <nav class="relative w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center gap-x-1">
         <NuxtLink to="/" class="flex-none font-medium text-3xl text-teal-500 focus:outline-hidden focus:opacity-80"
-          aria-label="Brand">LevaToys</NuxtLink>
+          aria-label="Brand">Лёва</NuxtLink>
         <button type="button"
           class="hs-collapse-toggle md:hidden relative size-9 flex justify-center items-center font-medium text-sm rounded-lg border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
           id="hs-header-base-collapse" aria-expanded="false" aria-controls="hs-header-base"
@@ -138,40 +138,38 @@
             <div class="my-2 md:my-0 md:mx-2">
               <div class="w-full h-px md:w-px md:h-4 bg-gray-100 md:bg-gray-300"></div>
             </div>
-            <div class="rounded-full border">
-             <NuxtLink to="/basket">
-              <button type="button" aria-haspopup="menu" aria-expanded="false"
-                class="inline-flex items-center justify-center size-[36px] text-sm font-semibold leading-none rounded-full bg-white text-black">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-shopping-basket-icon lucide-shopping-basket">
-                  <path d="m15 11-1 9" />
-                  <path d="m19 11-4-7" />
-                  <path d="M2 11h20" />
-                  <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4" />
-                  <path d="M4.5 15.5h15" />
-                  <path d="m5 11 4-7" />
-                  <path d="m9 11 1 9" />
-                </svg>
-             
-              </button>
-                 </NuxtLink>
+            <div class="flex items-center gap-2">
+              <div class="rounded-full border">
+                <NuxtLink to="/basket">
+                  <button type="button" aria-haspopup="menu" aria-expanded="false"
+                    class="inline-flex items-center justify-center size-[36px] text-sm font-semibold leading-none rounded-full bg-white text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-shopping-basket-icon lucide-shopping-basket">
+                      <path d="m15 11-1 9" />
+                      <path d="m19 11-4-7" />
+                      <path d="M2 11h20" />
+                      <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4" />
+                      <path d="M4.5 15.5h15" />
+                      <path d="m5 11 4-7" />
+                      <path d="m9 11 1 9" />
+                    </svg>
+                  </button>
+                </NuxtLink>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-1.5">
+                <HeaderNavprofile v-if="accessToken" />
+                <NuxtLink v-else to="/auth/login"
+                  class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-white text-black shadow-2xs hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-user-icon lucide-user">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg><span class="px-1">Войти</span>
+                </NuxtLink>
+              </div>
             </div>
-            <div class=" flex flex-wrap items-center gap-x-1.5">
-              <HeaderNavprofile v-if="accessToken" />
-              <NuxtLink v-else to="/auth/register"
-                class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg  bg-white text-black shadow-2xs hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
-                href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-user-icon lucide-user">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg><span class="px-1">Войти</span>
-              </NuxtLink>
-            </div>
-
 
           </div>
         </div>
@@ -180,7 +178,7 @@
   </header>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { api } from "@/store/api.js";
 
 const apiStore = api();
@@ -201,6 +199,19 @@ const fetchCategories = async () => {
 
 onMounted(() => {
   fetchCategories();
+  if (window.HSStaticMethods) {
+    window.HSStaticMethods.autoInit();
+  }
+});
+
+onUnmounted(() => {
+  // Cleanup any open dropdowns/collapses
+  const collapses = document.querySelectorAll('.hs-collapse');
+  collapses.forEach(collapse => {
+    if (collapse.classList.contains('hs-collapse-open')) {
+      collapse.classList.remove('hs-collapse-open');
+    }
+  });
 });
 
 let accessToken = useCookie("access_token").value;

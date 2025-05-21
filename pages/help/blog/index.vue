@@ -7,7 +7,7 @@
 					<template v-else>
 						<div v-for="(card, index) in news" :key="card.id"
 							class="group hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 p-3 rounded-xl transition"
-							href="#">
+							>
 							<div class="p-2 w-full h-50 overflow-hidden">
 								<img class="w-full h-full rounded-xl object-cover" :src="formattedImageUrl(card.image)":alt="card.name" />
 							</div>
