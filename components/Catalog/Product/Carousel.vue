@@ -147,7 +147,6 @@ onMounted(() => {
 
 watch(() => props.product?.images?.length, () => {
 	if (props.product?.images?.length > 1) {
-		// Re-initialize carousel if needed when images are loaded or changed
 		window.HSStaticMethods.autoInit();
 	}
 });

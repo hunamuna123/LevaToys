@@ -25,17 +25,16 @@ const showInstallPrompt = ref(false)
 let deferredPrompt = null
 
 onMounted(() => {
-  // Слушаем событие beforeinstallprompt
+
   window.addEventListener('beforeinstallprompt', (e) => {
-    // Предотвращаем автоматическое появление prompt
+
     e.preventDefault()
-    // Сохраняем событие для использования позже
+
     deferredPrompt = e
-    // Показываем наш кастомный prompt
+
     showInstallPrompt.value = true
   })
 
-  // Скрываем prompt после успешной установки
   window.addEventListener('appinstalled', () => {
     showInstallPrompt.value = false
   })
@@ -44,16 +43,16 @@ onMounted(() => {
 const installPWA = async () => {
   if (!deferredPrompt) return
 
-  // Показываем нативный prompt
+ 
   deferredPrompt.prompt()
   
-  // Ждем ответа пользователя
+
   const { outcome } = await deferredPrompt.userChoice
   
-  // Скрываем наш кастомный prompt
+
   showInstallPrompt.value = false
   
-  // Очищаем сохраненное событие
+
   deferredPrompt = null
 }
 

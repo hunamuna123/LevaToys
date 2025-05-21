@@ -32,11 +32,11 @@ const fetchNews = async () => {
     const result = await response.json()
     
     if (result.message === 'OK') {
-      // Set default image if no image is provided
+  
       if (!result.data.image || result.data.image.length === 0) {
         result.data.image = ['/toy.png']
       } else {
-        // Extract the image URL from the image object
+      
         result.data.image = result.data.image.map(img => img.image)
       }
       news.value = result.data

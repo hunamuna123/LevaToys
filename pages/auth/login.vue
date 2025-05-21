@@ -87,7 +87,7 @@ export default {
                     prepare: (str) => str.replace(/\D/g, ''),
                 });
                 
-                // Sync v-model with mask
+      
                 mask.on('accept', () => {
                     this.phone = mask.value;
                 });

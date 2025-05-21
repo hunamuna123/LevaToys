@@ -19,12 +19,11 @@ const searchQuery = ref('')
 let searchTimeout = null
 
 const handlesearch = () => {
-    // Clear previous timeout
+
     if (searchTimeout) {
         clearTimeout(searchTimeout)
     }
 
-    // Set new timeout to prevent too many requests
     searchTimeout = setTimeout(() => {
         if (searchQuery.value.trim()) {
             router.push({
@@ -32,6 +31,6 @@ const handlesearch = () => {
                 query: { search: searchQuery.value.trim() }
             })
         }
-    }, 500) // 500ms delay before search
+    }, 500)
 }
 </script>

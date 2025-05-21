@@ -101,13 +101,11 @@ const props = defineProps({
 
 const handleSort = (sortOption) => {
 	if (activeSort.value === sortOption) {
-		// If clicking the same sort option, remove sorting
 		activeSort.value = ''
 		const query = { ...route.query }
 		delete query.sort
 		router.push({ query })
 	} else {
-		// If selecting a different sort option
 		activeSort.value = sortOption
 		const query = { ...route.query, sort: sortOption }
 		router.push({ query })

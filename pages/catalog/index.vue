@@ -108,13 +108,13 @@ const fetchProducts = async () => {
 			},
 		});
 	
-		loadingIndicator.start() // Запуск индикатора
+		loadingIndicator.start() 
 		const data = await response.json();
 		products.value = data;
 	} catch (err) {
 		console.error('Ошибка при загрузке продуктов:', err);
 	} finally {
-		loadingIndicator.finish() // Остановка индикатора
+		loadingIndicator.finish() 
 		isProductsLoading.value = false;
 	}
 };

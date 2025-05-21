@@ -47,8 +47,6 @@ const closeModal = () => {
 	if (backdrop) {
 		backdrop.remove()
 	}
-
-	// Enable body scroll
 	document.body.style.overflow = ''
 }
 
@@ -57,7 +55,6 @@ const openModal = () => {
 	if (modal) {
 		modal.classList.remove('hidden')
 		modal.classList.add('hs-overlay-open')
-		// Disable body scroll
 		document.body.style.overflow = 'hidden'
 	}
 }
@@ -75,7 +72,6 @@ onMounted(() => {
 			}
 		})
 
-		// Add event listener for opening modal
 		const openButton = document.querySelector('[data-hs-overlay="#hs-scale-animation-modal-filter"]')
 		if (openButton) {
 			openButton.addEventListener('click', openModal)

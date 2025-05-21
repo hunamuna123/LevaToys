@@ -5,12 +5,12 @@ export default defineNuxtRouteMiddleware(async (to) => {
   const accessToken = useCookie('access_token');
   const refreshToken = useCookie('refresh_token');
 
-  // Если есть оба токена - ничего не делаем
+
   if (accessToken.value && refreshToken.value) {
     return;
   }
 
-  // Если нет access token, но есть refresh token - обновляем
+
   if (!accessToken.value && refreshToken.value) {
     try {
       const response = await fetch(`${apiStore.url}api/v1/refresh/`, {
@@ -26,7 +26,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
       if (response.ok) {
         const data = await response.json();
         if (data.data) {
-          // Обновляем токены в куках
+    
           accessToken.value = data.data.access_token;
           refreshToken.value = data.data.refresh_token;
         }

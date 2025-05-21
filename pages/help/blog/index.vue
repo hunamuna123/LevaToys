@@ -52,10 +52,9 @@ const formattedImageUrl = (images) => {
 
 const getFirstParagraph = (html) => {
 	if (!html) return ''
-	// Create a temporary div to parse HTML
 	const tempDiv = document.createElement('div')
 	tempDiv.innerHTML = html
-	// Get the first paragraph or return the first text content
+
 	const firstP = tempDiv.querySelector('p')
 	return firstP ? firstP.textContent : tempDiv.textContent
 }

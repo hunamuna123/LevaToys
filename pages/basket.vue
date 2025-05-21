@@ -225,7 +225,6 @@ onMounted(async () => {
     await cartStore.fetchCart()
     modal.value = document.getElementById('checkout-modal')
 
-    // Send localStorage cart items to backend if user is authenticated
     if (isAuthenticated()) {
         const storedCart = localStorage.getItem('busket')
         if (storedCart) {
@@ -235,7 +234,7 @@ onMounted(async () => {
                 for (const item of items) {
                     await cartStore.addToCart(item, item.quantity, false)
                 }
-                // Clear localStorage after successful sync
+      
                 localStorage.removeItem('busket')
             } catch (error) {
                 console.error('Error syncing cart with backend:', error)
@@ -254,7 +253,6 @@ async function updateQuantity(item: CartItem, newQuantity: number): Promise<void
     }
 }
 
-// Обработка ввода количества
 function handleQuantityInput(event: Event, item: CartItem): void {
     const input = event.target as HTMLInputElement
     const value = input.value.replace(/[^0-9]/g, '')
@@ -268,7 +266,6 @@ function handleQuantityInput(event: Event, item: CartItem): void {
     }
 }
 
-// Валидация при потере фокуса
 function validateQuantityOnBlur(event: Event, item: CartItem): void {
     const input = event.target as HTMLInputElement
     let quantity = parseInt(input.value)
@@ -283,7 +280,6 @@ function validateQuantityOnBlur(event: Event, item: CartItem): void {
     updateQuantity(item, quantity)
 }
 
-// Удаление товара
 async function removeItem(item: CartItem): Promise<void> {
     if (confirm(`Вы уверены, что хотите удалить "${item.name}" из корзины?`)) {
         try {
@@ -294,7 +290,6 @@ async function removeItem(item: CartItem): Promise<void> {
     }
 }
 
-// Очистка корзины
 async function clearCart(): Promise<void> {
     if (confirm('Вы уверены, что хотите очистить корзину?')) {
         try {
@@ -305,13 +300,11 @@ async function clearCart(): Promise<void> {
     }
 }
 
-// Форматирование цены
 function formatPrice(price: number | null): string {
     if (!price) return '0'
     return new Intl.NumberFormat('ru-RU').format(price)
 }
 
-// Склонение существительных
 function getNounPluralForm(number: number, forms: [string, string, string]): string {
     const cases = [2, 0, 1, 1, 1, 2]
     return forms[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]]
@@ -364,7 +357,6 @@ function closeModal(): void {
             modalContent.classList.remove('translate-y-0', 'opacity-100')
             modalContent.classList.add('translate-y-4', 'opacity-0')
         }
-        // Ждем завершения анимации перед скрытием
         setTimeout(() => {
             modal.value?.classList.add('hidden')
         }, 300)
@@ -382,7 +374,3 @@ const getImageUrl = (images: any[] | undefined) => {
     return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
 }
 </script>
-
-<style scoped>
-/* Удаляем старые стили анимации */
-</style>

@@ -123,17 +123,14 @@ const displayedPages = computed(() => {
 	const pages = [];
 	
 	if (props.currentPage <= 3) {
-		// Показываем первые 4 страницы
 		for (let i = 1; i <= 4; i++) {
 			pages.push(i);
 		}
 	} else if (props.currentPage >= props.totalPages - 2) {
-		// Показываем последние 4 страницы
 		for (let i = props.totalPages - 3; i <= props.totalPages; i++) {
 			pages.push(i);
 		}
 	} else {
-		// Показываем текущую страницу и по одной с каждой стороны
 		for (let i = props.currentPage - 1; i <= props.currentPage + 1; i++) {
 			pages.push(i);
 		}
