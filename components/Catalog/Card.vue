@@ -20,7 +20,7 @@
           {{ product.price }} ₽
         </div>
         <div v-else class="mt-auto">
-          <NuxtLink to="/auth/login" class="text-teal-600 hover:text-teal-700 font-medium">
+          <NuxtLink to="/auth/login" class="text-orange-600 hover:text-orange-700 font-medium">
             Войдите, чтобы увидеть цену
           </NuxtLink>
         </div>
@@ -29,7 +29,7 @@
 
     <NuxtLink :to="'/catalog/' + product.id">
       <button type="button"
-        class="mt-auto w-full py-2.5 px-6 justify-center items-center font-medium text-sm rounded-xl bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700 transition-colors duration-200 cursor-pointer">
+        class="mt-auto w-full py-2.5 px-6 justify-center items-center font-medium text-sm rounded-xl bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:bg-orange-700 transition-colors duration-200 cursor-pointer">
         Подробнее
       </button>
     </NuxtLink>
@@ -50,6 +50,6 @@ const props = defineProps({
 const formattedImageUrl = computed(() => {
   if (!props.product.images?.[0]?.image) return ''
   const imageUrl = props.product.images[0].image
-  return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+  return imageUrl.startsWith('https') ? imageUrl : `https://${imageUrl}`
 })
 </script>

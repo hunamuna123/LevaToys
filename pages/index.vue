@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-[90rem] mx-auto ">
     <HeaderNavbar/>
-    <div class="mt-30">
+    <div class="md:mt-30 mt-20">
     <Slider/>
     <BlocksInfo/>
     <BlocksCategories/>

@@ -87,13 +87,13 @@
             </h2>
             <p class="mt-2 text-sm text-gray-600">
               Нажимая «Разрешить все», вы соглашаетесь на использование всех файлов cookie. Посетите нашу  <NuxtLink
-                class="inline-flex items-center gap-x-1.5 text-teal-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium"
+                class="inline-flex items-center gap-x-1.5 text-orange-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium"
                 to="/license"> Политику
               использования файлов cookie</NuxtLink> чтобы узнать больше.
             </p>
             <div class="mt-5 inline-flex gap-x-2">
               <button @click="acceptAll" type="button"
-                class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-600 text-white hover:bg-teal-700 focus:outline-hidden focus:bg-teal-700 disabled:opacity-50 disabled:pointer-events-none">
+                class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-orange-600 text-white hover:bg-orange-700 focus:outline-hidden focus:bg-orange-700 disabled:opacity-50 disabled:pointer-events-none">
                 Принять все
               </button>
             </div>

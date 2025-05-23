@@ -9,7 +9,7 @@
 					<div
 						v-for="(image, index) in product.images"
 						:key="image.id"
-						class="hs-carousel-pagination-item shrink-0 border-2 rounded-xl overflow-hidden cursor-pointer w-[120px] h-[120px] hs-carousel-active:border-teal-400"
+						class="hs-carousel-pagination-item shrink-0 border-2 rounded-xl overflow-hidden cursor-pointer w-[120px] h-[120px] hs-carousel-active:border-orange-400"
 						:data-hs-carousel-slide-to="index">
 						<div
 							class="flex justify-center h-full bg-gray-100 aspect-square p-2 rounded-xl overflow-hidden">
@@ -71,7 +71,7 @@
 			<div
 				class="max-w-full flex gap-2 overflow-x-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent">
 				<div
-					class="shrink-0 border-2 rounded-xl overflow-hidden cursor-pointer w-[120px] h-[120px] border-teal-400">
+					class="shrink-0 border-2 rounded-xl overflow-hidden cursor-pointer w-[120px] h-[120px] border-orange-400">
 					<div
 						class="flex justify-center h-full bg-gray-100 aspect-square p-2 rounded-xl overflow-hidden">
 						<img 
@@ -99,7 +99,7 @@
 			<div
 				class="max-w-full flex gap-2 overflow-x-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-transparent">
 				<div
-					class="shrink-0 border-2 rounded-xl overflow-hidden cursor-pointer w-[120px] h-[120px] border-teal-400">
+					class="shrink-0 border-2 rounded-xl overflow-hidden cursor-pointer w-[120px] h-[120px] border-orange-400">
 					<div
 						class="flex justify-center h-full bg-gray-100 aspect-square p-2 rounded-xl overflow-hidden">
 						<img 
@@ -134,7 +134,7 @@ const props = defineProps({
 
 const getImageUrl = (imageUrl) => {
 	if (!imageUrl) return '/toy.png'
-	return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+	return imageUrl.startsWith('https') ? imageUrl : `https://${imageUrl}`
 }
 
 const handleImageError = (event) => {

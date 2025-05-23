@@ -22,8 +22,8 @@ const switchTab = (tabId) => {
 								aria-orientation="horizontal">
 
 								<button type="button"
-									class="hs-tab-active:bg-teal-100 hs-tab-active:text-teal-600 text-left px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-									:class="{ 'bg-teal-100 text-teal-600': activeTab === 'vertical-tab-with-border-1' }"
+									class="hs-tab-active:bg-orange-100 hs-tab-active:text-orange-600 text-left px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-orange-600 hover:bg-orange-50 transition"
+									:class="{ 'bg-orange-100 text-orange-600': activeTab === 'vertical-tab-with-border-1' }"
 									id="vertical-tab-with-border-item-1" 
 									@click="switchTab('vertical-tab-with-border-1')"
 									aria-selected="true"
@@ -34,8 +34,8 @@ const switchTab = (tabId) => {
 								</button>
 
 								<button type="button"
-									class="hs-tab-active:bg-teal-100 text-left hs-tab-active:text-teal-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-									:class="{ 'bg-teal-100 text-teal-600': activeTab === 'vertical-tab-with-border-2' }"
+									class="hs-tab-active:bg-orange-100 text-left hs-tab-active:text-orange-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-orange-600 hover:bg-orange-50 transition"
+									:class="{ 'bg-orange-100 text-orange-600': activeTab === 'vertical-tab-with-border-2' }"
 									id="vertical-tab-with-border-item-2" 
 									@click="switchTab('vertical-tab-with-border-2')"
 									aria-selected="false"
@@ -46,8 +46,8 @@ const switchTab = (tabId) => {
 								</button>
 
 								<button type="button"
-									class="hs-tab-active:bg-teal-100 text-left hs-tab-active:text-teal-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-									:class="{ 'bg-teal-100 text-teal-600': activeTab === 'vertical-tab-with-border-3' }"
+									class="hs-tab-active:bg-orange-100 text-left hs-tab-active:text-orange-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-orange-600 hover:bg-orange-50 transition"
+									:class="{ 'bg-orange-100 text-orange-600': activeTab === 'vertical-tab-with-border-3' }"
 									id="vertical-tab-with-border-item-3" 
 									@click="switchTab('vertical-tab-with-border-3')"
 									aria-selected="false"

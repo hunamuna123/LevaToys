@@ -1,25 +1,28 @@
 <template>
-  <div class="max-w-2xl mt-12 mx-auto text-center mb-10">
+  <div class="max-w-2xl  mx-auto text-center mt-2 mb-2 md:mb-10 md:mt-12">
     <h2 class="text-2xl font-bold md:text-4xl font-inter md:leading-tight">
       Популярные категории
     </h2>
   </div>
-  <div class="overflow-x-auto md:overflow-visible px-4 py-10 sm:px-4 lg:px-8">
+  <div class="px-4 py-10 sm:px-4 lg:px-8">
+
+  
+  <div class="overflow-x-auto md:overflow-visible ">
     <div
       class="grid grid-flow-col auto-cols-[80%] gap-4 md:grid-flow-row md:auto-cols-auto  md:grid-cols-2 lg:grid-cols-3">
       <SkeletonCategories v-if="loading" />
       <template v-else>
         <div v-for="category in categories" :key="category.id"
-          class="card bg-teal-400 shadow-2xl  border-teal-300 border rounded-xl relative flex flex-col">
+          class="card bg-orange-400 shadow-2xl  border-orange-300 border rounded-xl relative flex flex-col">
           <div class="relative w-full h-100 rounded-xl overflow-hidden">
             <img :src="formattedImageUrl(category.thumbnail)" :alt="category.name" class="w-full h-full object-cover" />
           </div>
-          <div class="absolute top-1 left-4 p-2 rounded-xl text-black text-xl font-bold backdrop-blur-xl">
+          <div class="absolute  p-2 rounded-xl text-black text-xl font-bold backdrop-blur-xl">
             {{ category.name }}
           </div>
           <div class="absolute bottom-4 right-4">
             <NuxtLink :to="`/catalog/?category_id=${category.id}`">
-              <button class="bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full">
+              <button class="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -30,6 +33,7 @@
         </div>
       </template>
     </div>
+  </div>
   </div>
 </template>
 <script setup>

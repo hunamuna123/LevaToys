@@ -1,6 +1,6 @@
 <template>
     <NuxtLayout>
-        <div class="container mx-auto  min-h-screen">
+        <div class="container mx-auto ">
             <div class="flex justify-between items-center mb-8">
                 <h1 class="text-2xl font-semibold">Корзина</h1>
                 <div class="text-sm text-gray-500">
@@ -23,7 +23,7 @@
                             <div class="flex-1">
                                 <div class="flex flex-col md:flex-row justify-between items-start mb-2">
                                     <div>
-                                        <h3 class="font-medium hover:text-teal-500 transition-colors duration-200">
+                                        <h3 class="font-medium hover:text-orange-500 transition-colors duration-200">
                                             {{ item.name }}
                                         </h3>
                                         <p class="text-sm text-gray-500">{{ formatPrice(item.price) }} ₽/шт</p>
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="flex flex-col md:flex-row justify-between items-center mt-4">
                                     <div
-                                        class="py-2 px-3 inline-block rounded-lg hover:border-teal-500 transition-colors duration-200">
+                                        class="py-2 px-3 inline-block rounded-lg hover:border-orange-500 transition-colors duration-200">
                                         <div class="flex items-center gap-x-1.5">
                                             <button type="button" @click="updateQuantity(item, item.quantity - 1)"
                                                 :disabled="item.quantity <= 1"
@@ -76,7 +76,7 @@
                                         </div>
                                     </div>
                                     <div class="font-medium mt-2 md:mt-0">
-                                        <span class="text-teal-500">{{ formatPrice(item.price * item.quantity) }}
+                                        <span class="text-orange-500">{{ formatPrice(item.price * item.quantity) }}
                                             ₽</span>
                                     </div>
                                 </div>
@@ -95,14 +95,14 @@
                         <p class="mt-1 text-sm text-gray-500">Добавьте товары в корзину, чтобы оформить заказ</p>
                         <div class="mt-6">
                             <NuxtLink to="/catalog"
-                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl text-white bg-teal-500 hover:bg-teal-600 transition-colors duration-200">
+                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl text-white bg-orange-500 hover:bg-orange-600 transition-colors duration-200">
                                 Перейти в каталог
                             </NuxtLink>
                         </div>
                     </div>
 
                     <button v-if="cartItems.length" @click="clearCart"
-                        class="text-teal-500 hover:text-teal-600 border-teal-300 border rounded-lg p-2 transition-colors duration-200 mt-4">
+                        class="text-orange-500 hover:text-orange-600 border-orange-300 border rounded-lg p-2 transition-colors duration-200 mt-4">
                         Очистить корзину
                     </button>
                 </div>
@@ -118,10 +118,10 @@
                             <div class="border-t border-gray-200 pt-4">
                                 <div class="flex justify-between items-center mb-6">
                                     <span class="text-xl font-medium">Итого</span>
-                                    <span class="text-xl font-medium text-teal-500">{{ formatPrice(totalSum) }} ₽</span>
+                                    <span class="text-xl font-medium text-orange-500">{{ formatPrice(totalSum) }} ₽</span>
                                 </div>
                                 <button @click="proceedToCheckout" :disabled="!cartItems.length"
-                                    class="w-full bg-teal-500 text-white py-3 rounded-lg hover:bg-teal-600 transition-colors duration-200 disabled:opacity-50 disabled:hover:bg-teal-500">
+                                    class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors duration-200 disabled:opacity-50 disabled:hover:bg-orange-500">
                                     Перейти к оформлению
                                 </button>
                             </div>
@@ -156,7 +156,7 @@
                         <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" @click="closeModal">
                             Отмена
                         </button>
-                        <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-500 text-white hover:bg-teal-600 focus:outline-hidden focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none" @click="confirmCheckout">
+                        <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-orange-500 text-white hover:bg-orange-600 focus:outline-hidden focus:bg-orange-600 disabled:opacity-50 disabled:pointer-events-none" @click="confirmCheckout">
                             Подтвердить
                         </button>
                     </div>

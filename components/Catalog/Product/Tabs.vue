@@ -3,25 +3,25 @@
         <nav class="flex justify-between gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
             <div class="flex gap-x-2 justify-end">
                 <button type="button"
-                    class="hs-tab-active:font-semibold hs-tab-active:border-teal-600 hs-tab-active:text-teal-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-teal-600 focus:outline-hidden focus:text-teal-600 disabled:opacity-50 disabled:pointer-events-none active"
+                    class="hs-tab-active:font-semibold hs-tab-active:border-orange-600 hs-tab-active:text-orange-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-orange-600 focus:outline-hidden focus:text-orange-600 disabled:opacity-50 disabled:pointer-events-none active"
                     id="tabs-with-icons-item-1" aria-selected="true" data-hs-tab="#tabs-with-icons-1"
                     aria-controls="tabs-with-icons-1" role="tab">
                     Характеристики
                 </button>
                 <button type="button"
-                    class="hs-tab-active:font-semibold hs-tab-active:border-teal-600 hs-tab-active:text-teal-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-teal-600 focus:outline-hidden focus:text-teal-600 disabled:opacity-50 disabled:pointer-events-none"
+                    class="hs-tab-active:font-semibold hs-tab-active:border-orange-600 hs-tab-active:text-orange-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-orange-600 focus:outline-hidden focus:text-orange-600 disabled:opacity-50 disabled:pointer-events-none"
                     id="tabs-with-icons-item-2" aria-selected="false" data-hs-tab="#tabs-with-icons-2"
                     aria-controls="tabs-with-icons-2" role="tab">
                     Описание
                 </button>
                 <button type="button"
-                    class="hs-tab-active:font-semibold hs-tab-active:border-teal-600 hs-tab-active:text-teal-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-teal-600 focus:outline-hidden focus:text-teal-600 disabled:opacity-50 disabled:pointer-events-none"
+                    class="hs-tab-active:font-semibold hs-tab-active:border-orange-600 hs-tab-active:text-orange-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-orange-600 focus:outline-hidden focus:text-orange-600 disabled:opacity-50 disabled:pointer-events-none"
                     id="tabs-with-icons-item-3" aria-selected="false" data-hs-tab="#tabs-with-icons-3"
                     aria-controls="tabs-with-icons-3" role="tab">
                     Оплата
                 </button>
                 <button type="button"
-                    class="hs-tab-active:font-semibold hs-tab-active:border-teal-600 hs-tab-active:text-teal-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-teal-600 focus:outline-hidden focus:text-teal-600 disabled:opacity-50 disabled:pointer-events-none"
+                    class="hs-tab-active:font-semibold hs-tab-active:border-orange-600 hs-tab-active:text-orange-600 py-4 px-1 inline-flex items-center gap-x-2 border-b border-gray-300-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-orange-600 focus:outline-hidden focus:text-orange-600 disabled:opacity-50 disabled:pointer-events-none"
                     id="tabs-with-icons-item-4" aria-selected="false" data-hs-tab="#tabs-with-icons-4"
                     aria-controls="tabs-with-icons-4" role="tab">
                     Доставка
@@ -99,7 +99,7 @@
             <p>- Бесплатная доставка по г. Москва (в пределах МКАД) при заказе от 20 000 руб.</p>
             <p>- Отгрузка заказов производится со склада в Москве.</p>
             <p>- С удовольствием составим Договор поставки, для сотрудничества.</p>
-            <p>Подробнее о условиях доставки в разделе <NuxtLink to="/help/delivery" class="text-teal-500">Доставка
+            <p>Подробнее о условиях доставки в разделе <NuxtLink to="/help/delivery" class="text-orange-500">Доставка
                 </NuxtLink>
             </p>
         </div>

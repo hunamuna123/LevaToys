@@ -12,13 +12,13 @@
         </ul>
         <p class="font-semibold text-black">Вы обратились по адресу!</p>
   
-        <button class="bg-teal-500 rounded-xl hover:bg-teal-600 text-white font-bold py-2 px-4 rounded w-fit">
+        <button class="bg-orange-500 rounded-xl hover:bg-orange-600 text-white font-bold py-2 px-4 rounded w-fit">
           Подробнее
         </button>
       </div>  
       <div class="lg:w-1/2 mt-6 lg:mt-0 hidden lg:flex justify-end ">
         <img
-          src="/toy.png"
+          src="/leva.jpg"
           alt="Плюшевая игрушка в коробке"
           class="max-w-xs w-full rounded-xl"
         />

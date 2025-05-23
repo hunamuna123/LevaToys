@@ -1,8 +1,8 @@
 <template>
-    <div class="min-h-screen flex flex-col max-w-[90rem] mx-auto">
+    <div class="min-h-screen flex flex-col max-w-[90rem] mx-auto ">
         <main class="flex-1 ">
             <HeaderNavbar />
-            <div class="mt-4 px-6 bg-white rounded-lg w-full sm:px-6 lg:px-8">
+            <div class="mt-4 px-6 bg-white rounded-lg w-full sm:px-6 mt-15 md:mt-30 lg:px-8">
                 <h2 class="text-2xl font-bold mb-1">Договор-оферта интернет-магазина</h2> <br>
                 <p class="text-sm text-gray-500 mb-6">1. Общие положения <br><br>
 
@@ -49,7 +49,7 @@
                     законодательством.<br><br>
 
                     4.2. Субъектами Данных, обрабатываемых Обществом, являются: - клиенты, в т.ч. посетители
-                    интернет-сайта, адресуемого путём доменного имени https://Лёва/ (и его поддоменов), и
+                    интернет-сайта, адресуемого путём доменного имени httpss://Лёва/ (и его поддоменов), и
                     администрируемого на основании соглашения с Обществом.<br><br>
 
                     4.3. Общество осуществляет обработку Данных субъектов в следующих целях: - осуществления возложенных

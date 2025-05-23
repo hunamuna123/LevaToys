@@ -11,7 +11,7 @@
 				type="button"
 				class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium transition-colors duration-200"
 				:class="{
-					'bg-teal-500 text-white': selectedBrands.includes(brand.id),
+					'bg-orange-500 text-white': selectedBrands.includes(brand.id),
 					'bg-gray-100 text-black': !selectedBrands.includes(brand.id),
 				}"
 				@click="toggleBrand(brand.id)"

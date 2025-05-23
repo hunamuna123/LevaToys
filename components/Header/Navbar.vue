@@ -6,16 +6,16 @@
         class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
         <div class="py-2 sm:py-0 flex flex-col sm:flex-row sm:justify-start gap-y-2 sm:gap-y-0 sm:gap-x-6">
           <NuxtLink to="/company"
-            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
             Компания</NuxtLink>
           <NuxtLink to="/help/delivery"
-            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
             Доставка</NuxtLink>
           <NuxtLink to="/contacts"
-            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
             Контакты</NuxtLink>
           <NuxtLink to="/help/blog"
-            class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+            class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
             Полезные статьи</NuxtLink>
         </div>
       </div>
@@ -24,7 +24,7 @@
   <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white/80 backdrop-blur-md fixed top-0 md:top-[41px] left-0 right-0 border-b border-gray-200">
     <nav class="relative w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center gap-x-1">
-        <NuxtLink to="/" class="flex-none font-medium text-3xl text-teal-500 focus:outline-hidden focus:opacity-80"
+        <NuxtLink to="/" class="flex-none font-medium text-3xl text-orange-500 focus:outline-hidden focus:opacity-80"
           aria-label="Brand">Лёва</NuxtLink>
         <button type="button"
           class="hs-collapse-toggle md:hidden relative size-9 flex justify-center items-center font-medium text-sm rounded-lg border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
@@ -61,16 +61,16 @@
                   class="hs-collapse block md:hidden overflow-hidden transition-all duration-300 basis-full grow">
                   <div class="py-2 md:py-0 flex flex-col md:flex-row md:justify-end gap-y-2 md:gap-y-0 md:gap-x-6">
                     <NuxtLink to="/company"
-                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
                       Компания</NuxtLink>
                     <NuxtLink to="/help/delivery"
-                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
                       Доставка</NuxtLink>
                     <NuxtLink to="/contacts"
-                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
                       Контакты</NuxtLink>
                     <NuxtLink to="/help/blog"
-                      class="font-medium text-sm text-black hover:text-teal-600 focus:outline-hidden focus:text-teal-600">
+                      class="font-medium text-sm text-black hover:text-orange-600 focus:outline-hidden focus:text-orange-600">
                       Полезные статьи</NuxtLink>
                   </div>
                 </div>
@@ -79,7 +79,7 @@
                 <div
                   class="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none] [--is-collapse:true] md:[--is-collapse:false] ">
                   <button id="hs-header-base-mega-menu-fullwidth" type="button"
-                    class="hs-dropdown-toggle w-full p-2 flex items-center text-sm bg-teal-500 text-white hover:bg-teal-600 rounded-lg focus:outline-hidden focus:bg-teal-700"
+                    class="hs-dropdown-toggle w-full p-2 flex items-center text-sm bg-orange-500 text-white hover:bg-orange-600 rounded-lg focus:outline-hidden focus:bg-orange-700"
                     aria-haspopup="menu" aria-expanded="false" aria-label="Mega Menu">
                     <svg class="shrink-0 size-4 me-3 md:me-2 block md:hidden" xmlns="http://www.w3.org/2000/svg"
                       width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -142,7 +142,7 @@
               <div class="rounded-full border">
                 <NuxtLink to="/basket">
                   <button type="button" aria-haspopup="menu" aria-expanded="false"
-                    class="inline-flex items-center justify-center size-[36px] text-sm font-semibold leading-none rounded-full bg-white text-black">
+                    class="inline-flex items-center justify-center size-[36px] text-sm font-semibold leading-none rounded-full bg-white/80 text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="lucide lucide-shopping-basket-icon lucide-shopping-basket">
@@ -160,7 +160,7 @@
               <div class="flex flex-wrap items-center gap-x-1.5">
                 <HeaderNavprofile v-if="accessToken" />
                 <NuxtLink v-else to="/auth/login"
-                  class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-white text-black shadow-2xs hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100">
+                  class="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-white/80 text-black shadow-2xs hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-user-icon lucide-user">

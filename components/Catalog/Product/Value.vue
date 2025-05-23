@@ -9,7 +9,7 @@
 					class="max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg" role="alert" tabindex="-1">
 					<div class="flex p-4">
 						<div class="shrink-0">
-							<svg class="shrink-0 size-4 text-teal-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16"
+							<svg class="shrink-0 size-4 text-orange-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16"
 								height="16" fill="currentColor" viewBox="0 0 16 16">
 								<path
 									d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z">
@@ -51,7 +51,7 @@
 			</h4>
 		</div>
 		
-		<div class="mt-6 flex items-center justify-between gap-4">
+		<div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 			<div class="flex flex-col gap-1">
 				<template v-if="isAuthenticated()">
 					<h1 class="text-3xl font-bold">
@@ -66,12 +66,12 @@
 					</h4>
 				</template>
 				<template v-else>
-					<NuxtLink to="/auth/login" class="text-teal-600 hover:text-teal-700 font-medium text-xl">
+					<NuxtLink to="/auth/login" class="text-orange-600 hover:text-orange-700 font-medium text-xl">
 						Войдите, чтобы увидеть цену
 					</NuxtLink>
 				</template>
 			</div>
-			<div>
+			<div class="w-full sm:w-auto">
 				<div class="flex items-center gap-4">
 					<div class="flex items-center gap-2">
 						<button @click="quantity > 1 && quantity--"
@@ -101,7 +101,7 @@
 					</div>
 					<button @click="addToCart(product)"
 						type="button"
-						class="py-3 px-6 inline-flex items-center font-medium text-sm rounded-full bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700 transition-colors duration-200"
+						class="py-3 px-6 inline-flex items-center font-medium text-sm rounded-full bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:bg-orange-700 transition-colors duration-200"
 					>
 						Добавить в корзину
 					</button>

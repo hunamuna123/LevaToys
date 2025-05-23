@@ -57,7 +57,7 @@ onMounted(() => {
 const formattedImageUrl = (images) => {
 	if (!images || images.length === 0) return '/toy.png'
 	const imageUrl = images[0]?.image || images[0]
-	return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+	return imageUrl.startsWith('https') ? imageUrl : `https://${imageUrl}`
 }
 
 </script>
@@ -65,7 +65,7 @@ const formattedImageUrl = (images) => {
 	<NuxtLayout>
 		<div class="mx-auto my-6">
 			<div v-if="loading" class="flex justify-center items-center h-64">
-				<div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
+				<div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
 			</div>
 
 			<div v-else-if="error" class="text-red-500 text-center">

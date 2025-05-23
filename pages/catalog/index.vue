@@ -29,6 +29,13 @@
 						<CatalogEmpty v-else />
 					</div>
 				</div>
+
+				<!-- Bottom pagination for mobile -->
+				<div class="flex-none mb-2 mt-2 md:hidden">
+					<CatalogSkeletonPagination v-if="isProductsLoading" />
+					<CatalogPagination v-else :current-page="currentPage" :total-pages="totalPages" :has-prev="hasPrev"
+						:has-next="hasNext" @page-change="handlePageChange" />
+				</div>
 			</div>
 		</div>
 	</NuxtLayout>

@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col max-w-[90rem] mx-auto">
     <main class="flex-1 ">
       <HeaderNavbar />
-      <div class="mt-4 px-6 bg-white rounded-lg w-full sm:px-6 lg:px-8">
+      <div class=" mt-15 md:mt-30 px-6 bg-white rounded-lg w-full sm:px-6 lg:px-8">
         <h2 class="text-2xl font-bold mb-1">Профиль</h2>
         <p class="text-sm text-gray-500 mb-6">Настройте свой профиль как вам удобно</p>
         <form class="space-y-6" @submit.prevent="updateProfile">
@@ -13,7 +13,7 @@
             <div v-else>
               <label class="block text-sm font-medium text-black">ФИО</label>
               <input type="text" v-model="profile.name" placeholder="Фамилия"
-                class="mt-1 w-full border rounded-md px-3 border-teal-200 py-2 focus:outline-none focus:border-teal-300" />
+                class="mt-1 w-full border rounded-md px-3 border-orange-200 py-2 focus:outline-none focus:border-orange-300" />
             </div>
             <div v-if="loading">
               <SkeletonLoader />
@@ -21,7 +21,7 @@
             <div v-else>
               <label class="block text-sm font-medium text-black invisible">span</label>
               <input type="text" v-model="profile.surname" placeholder="Имя"
-                class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
+                class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-orange-200 focus:border-orange-300" />
             </div>
             <div v-if="loading">
               <SkeletonLoader />
@@ -29,7 +29,7 @@
             <div v-else>
               <label class="block text-sm font-medium text-black invisible">span</label>
               <input type="text" v-model="profile.patronymic" placeholder="Отчество"
-                class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
+                class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-orange-200 focus:border-orange-300" />
             </div>
           </div>
 
@@ -39,7 +39,7 @@
           <div v-else>
             <label class="block text-sm font-medium text-black">Электронная почта</label>
             <input type="email" v-model="profile.email" placeholder="work@Лёва.ru"
-              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
+              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-orange-200 focus:border-orange-300" />
           </div>
 
           <div v-if="loading">
@@ -48,7 +48,7 @@
           <div v-else>
             <label class="block text-sm font-medium text-black">Пароль</label>
             <input type="password" v-model="profile.password" placeholder="******"
-              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
+              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-orange-200 focus:border-orange-300" />
           </div>
 
           <div v-if="loading">
@@ -57,7 +57,7 @@
           <div v-else>
             <label class="block text-sm font-medium text-black">ИНН</label>
             <input type="text" v-model="profile.inn" placeholder="Введите свой ИНН"
-              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
+              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-orange-200 focus:border-orange-300" />
           </div>
 
           <div v-if="loading">
@@ -66,11 +66,11 @@
           <div v-else>
             <label class="block text-sm font-medium text-black">Имя компании</label>
             <input type="text" v-model="profile.name_company" placeholder="Введите название своей компании"
-              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-teal-200 focus:border-teal-300" />
+              class="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none border-orange-200 focus:border-orange-300" />
           </div>
 
           <div class="flex justify-end gap-4">
-            <button type="submit" class="px-4 py-2 rounded-md bg-teal-500 text-white hover:bg-teal-600">
+            <button type="submit" class="px-4 py-2 rounded-md bg-orange-500 text-white hover:bg-orange-600">
               Сохранить
             </button>
           </div>

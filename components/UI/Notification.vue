@@ -10,14 +10,14 @@
         <div v-if="show" class="fixed bottom-4 right-4 z-50">
             <div :class="[
                 'max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto overflow-hidden',
-                type === 'success' ? 'border-l-4 border-teal-500' :
+                type === 'success' ? 'border-l-4 border-orange-500' :
                 type === 'error' ? 'border-l-4 border-red-500' :
                 'border-l-4 border-yellow-500'
             ]">
                 <div class="p-4">
                     <div class="flex items-start">
                         <div class="flex-shrink-0">
-                            <svg v-if="type === 'success'" class="h-6 w-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg v-if="type === 'success'" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
                             <svg v-else-if="type === 'error'" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

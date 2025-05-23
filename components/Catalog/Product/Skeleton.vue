@@ -1,5 +1,5 @@
 <template>
-	<div class="-mt-4 lg:-mt-8 w-full flex flex-col gap-10">
+	<div class=" mt-4  w-full flex flex-col gap-10">
 		<div class="w-full flex flex-col md:flex-row gap-12">
 			<div class="relative md:max-w-[50%] lg:max-w-[40%]">
 				<div class="flex flex-col">

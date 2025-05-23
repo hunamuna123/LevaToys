@@ -34,7 +34,7 @@
 					type="button"
 					class="min-h-[38px] min-w-[38px] flex justify-center items-center py-2 px-3 text-sm rounded-lg transition-colors duration-200"
 					:class="{
-						'bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700': page === currentPage,
+						'bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:bg-orange-700': page === currentPage,
 						'text-black bg-gray-100 hover:bg-gray-200 focus:outline-none focus:bg-gray-200': page !== currentPage
 					}"
 					@click="handlePageChange(page)"
@@ -49,7 +49,7 @@
 					type="button"
 					class="min-h-[38px] min-w-[38px] flex justify-center items-center py-2 px-3 text-sm rounded-lg transition-colors duration-200"
 					:class="{
-						'bg-teal-600 text-white hover:bg-teal-700 focus:outline-none focus:bg-teal-700': page === currentPage,
+						'bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:bg-orange-700': page === currentPage,
 						'text-black bg-gray-100 hover:bg-gray-200 focus:outline-none focus:bg-gray-200': page !== currentPage
 					}"
 					@click="handlePageChange(page)"

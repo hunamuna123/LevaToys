@@ -47,7 +47,7 @@ const loading = ref(true)
 const formattedImageUrl = (images) => {
 	if (!images || images.length === 0) return '/toy.png'
 	const imageUrl = images[0]?.image || images[0]
-	return imageUrl.startsWith('http') ? imageUrl : `http://${imageUrl}`
+	return imageUrl.startsWith('https') ? imageUrl : `https://${imageUrl}`
 }
 
 const getFirstParagraph = (html) => {

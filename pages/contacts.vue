@@ -21,8 +21,8 @@ const switchTab = (tabId) => {
 								aria-orientation="horizontal">
 
 								<button type="button"
-									class="hs-tab-active:bg-teal-100 hs-tab-active:text-teal-600 text-left px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-									:class="{ 'bg-teal-100 text-teal-600': activeTab === 'vertical-tab-with-border-1' }"
+									class="hs-tab-active:bg-orange-100 hs-tab-active:text-orange-600 text-left px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-orange-600 hover:bg-orange-50 transition"
+									:class="{ 'bg-orange-100 text-orange-600': activeTab === 'vertical-tab-with-border-1' }"
 									id="vertical-tab-with-border-item-1"
 									@click="switchTab('vertical-tab-with-border-1')" aria-selected="true"
 									data-hs-tab="#vertical-tab-with-border-1" aria-controls="vertical-tab-with-border-1"
@@ -31,8 +31,8 @@ const switchTab = (tabId) => {
 								</button>
 					
 								<button type="button"
-									class="hs-tab-active:bg-teal-100 text-left hs-tab-active:text-teal-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-teal-600 hover:bg-teal-50 transition"
-									:class="{ 'bg-teal-100 text-teal-600': activeTab === 'vertical-tab-with-border-2' }"
+									class="hs-tab-active:bg-orange-100 text-left hs-tab-active:text-orange-600 px-3 py-2 rounded-lg text-sm text-gray-500 hover:text-orange-600 hover:bg-orange-50 transition"
+									:class="{ 'bg-orange-100 text-orange-600': activeTab === 'vertical-tab-with-border-2' }"
 									id="vertical-tab-with-border-item-2"
 									@click="switchTab('vertical-tab-with-border-2')" aria-selected="false"
 									data-hs-tab="#vertical-tab-with-border-2" aria-controls="vertical-tab-with-border-2"
@@ -74,7 +74,7 @@ const switchTab = (tabId) => {
 									</div>
 
 									<button type="button"
-										class="py-3 px-4 inline-flex w-40 items-center gap-x-2 text-sm font-medium rounded-lg border border-teal-500 text-teal-500 hover:border-teal-400 hover:text-teal-400 focus:outline-hidden focus:border-teal-400 focus:text-teal-400 disabled:opacity-50 disabled:pointer-events-none">
+										class="py-3 px-4 inline-flex w-40 items-center gap-x-2 text-sm font-medium rounded-lg border border-orange-500 text-orange-500 hover:border-orange-400 hover:text-orange-400 focus:outline-hidden focus:border-orange-400 focus:text-orange-400 disabled:opacity-50 disabled:pointer-events-none">
 										Свяжитесь с нами
 									</button>
 
