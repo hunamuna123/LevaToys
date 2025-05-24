@@ -42,7 +42,7 @@ const {
 	refresh,
 } = useFetch(() => {
 	const endpoint = isAuthenticated() ? 'api/v1/auth/product' : 'api/v1/product'
-	return `${url.value}${endpoint}/${id}/`
+	return `${url.value}${endpoint}/${id}/` 
 }, {
 	headers: {
 		...getAuthHeaders(),

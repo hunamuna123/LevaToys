@@ -18,7 +18,8 @@ export default defineNuxtConfig({
       title: 'Лёва',
       meta: [
         { name: 'description', content: 'Лёва - Toy Store' },
-        { name: 'theme-color', content: '#ffffff' }
+        { name: 'theme-color', content: '#ffffff' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/icons/icon-192x192.png' },

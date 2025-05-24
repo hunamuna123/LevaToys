@@ -109,7 +109,7 @@
 
                 <!-- Итого -->
                 <div class="lg:col-span-1">
-                    <div class="bg-gray-50 p-6 rounded-lg sticky top-4">
+                    <div class="bg-gray-50 p-6 rounded-lg lg:sticky lg:top-4">
                         <div class="space-y-4">
                             <div class="flex justify-between items-center text-sm text-gray-500">
                                 <span>Товары ({{ totalItems }})</span>
@@ -121,7 +121,7 @@
                                     <span class="text-xl font-medium text-orange-500">{{ formatPrice(totalSum) }} ₽</span>
                                 </div>
                                 <button @click="proceedToCheckout" :disabled="!cartItems.length"
-                                    class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors duration-200 disabled:opacity-50 disabled:hover:bg-orange-500">
+                                    class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors duration-200 disabled:opacity-50 disabled:hover:bg-orange-500 touch-manipulation">
                                     Перейти к оформлению
                                 </button>
                             </div>
@@ -341,7 +341,14 @@ async function proceedToCheckout(): Promise<void> {
         console.log('Response data:', data)
         
         if (data.message === 'OK' && data.data?.link) {
-            window.open(data.data.link, '_blank')
+            // Create a temporary link element and trigger click
+            const link = document.createElement('a')
+            link.href = data.data.link
+            link.target = '_blank'
+            link.rel = 'noopener noreferrer'
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
         } else {
             console.error('Error getting bot link:', data)
         }

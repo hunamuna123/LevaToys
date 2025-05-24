@@ -107,7 +107,7 @@ const fetchProducts = async () => {
 			query.set('page', '1');
 		}
 
-		const endpoint = isAuthenticated() ? 'api/v1/auth/product/auth/' : 'api/v1/product/';
+		const endpoint = isAuthenticated() ? 'api/v1/auth/product/' : 'api/v1/product/';
 		const response = await fetch(`${url.value}${endpoint}?${query.toString()}`, {
 			headers: {
 				...getAuthHeaders(),
